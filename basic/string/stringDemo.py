@@ -12,7 +12,8 @@ print(str[:3])
 # str = '37028320190202219'
 # try:
 #     print(str[6:10],'year',str[10:12],'month', str[12:14],'day')
-    
+
+
 # except IndexError:
 #     print("index Error")
 

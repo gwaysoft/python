@@ -2,38 +2,38 @@ import re
 from lxml import etree
 import subprocess
 import requests
-import os
 import logging
     
 
-def getLogger(level):
+def getLogger(consoleLevel, fileLevel):
+    logger = logging.getLogger('simple_example')
+    logger.setLevel(logging.DEBUG)
+    # create file handler which logs even debug messages
+    # log directory
+    import os
+    genpath = os.getcwd()
+    logpath = os.path.join(genpath, "log")  # 拼接log文件路径
 
+    if os.path.exists(logpath):  # 判断路径是否存在，不存在则创建
+        pass
+    else:
+        os.makedirs(logpath)
+    logFileName = logpath + "/log.log"
     from logging.handlers import TimedRotatingFileHandler
-    # formatter
-    fmt = "%(levelname)s - %(asctime)s  - %(funcName)s - %(message)s"
-    dateFmt = "%Y-%m-%d %H:%M:%S"
-    formatter = logging.Formatter(fmt=fmt, datefmt=dateFmt)
-
-    # handler
-    # when="D" day "W0" sunday
-    # backupCount = 30 30天 保留时间
-    # print(os.getcwd())
-    handler = TimedRotatingFileHandler("./ap_sync.log", when="D",backupCount=30)
-    handler.setFormatter(formatter)
-
-    # handler
-    streamHandler = logging.StreamHandler()
-    streamHandler.setFormatter(formatter)
-
-
-    # logger
-    logger = logging.getLogger("time")
-    logger.addHandler(handler)
-    logger.addHandler(streamHandler)
-    logger.setLevel(level)
+    fh = TimedRotatingFileHandler(logFileName, when="D",backupCount=30)
+    fh.setLevel(fileLevel)
+    # create console handler with a higher log level
+    ch = logging.StreamHandler()
+    ch.setLevel(consoleLevel)
+    # create formatter and add it to the handlers
+    ch.setFormatter(logging.Formatter('%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s'))
+    fh.setFormatter(logging.Formatter('%(asctime)s -%(filename)s - %(levelname)s: %(message)s'))
+    # add the handlers to logger
+    logger.addHandler(ch)
+    logger.addHandler(fh)
     return logger
 
-logger = getLogger(logging.DEBUG)
+logger = getLogger(logging.DEBUG, logging.INFO)
 
 def getSynAddrDict():
     text = requests.get(
@@ -120,16 +120,13 @@ def delPaAddr():
         return
     return
 
-
-
-
 # delPaAddr()
 
 # exeCmd(commit)
 
 def addPaAddr():
     addPaAddrSet = getSynAddrDict().keys() - getPaAddrDict().keys()
-    # print(addPaAddrSet, type(addPaAddrSet))
+    logger.debug(addPaAddrSet)
     # addPaAddrSet = {}
     for item in addPaAddrSet:
         text = wrapXml(item, getSynAddrDict()[item])

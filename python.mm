@@ -1291,8 +1291,9 @@
 </node>
 </node>
 <node CREATED="1587635474072" ID="ID_356180196" MODIFIED="1587635483245" POSITION="left" TEXT="reference">
+<node CREATED="1592560742208" ID="ID_736204130" MODIFIED="1592560744386" TEXT=":D:\program\python38\Doc\python383.chm"/>
 <node CREATED="1588995321135" ID="ID_1836758198" MODIFIED="1588995322764" TEXT="https://www.runoob.com/python3/python3-tutorial.html"/>
-<node CREATED="1587635506382" ID="ID_444725226" MODIFIED="1588995333603" TEXT="python.org">
+<node CREATED="1587635506382" FOLDED="true" ID="ID_444725226" MODIFIED="1592560747936" TEXT="python.org">
 <node CREATED="1587635514209" ID="ID_1103071576" MODIFIED="1587635515468" TEXT="https://docs.python.org/3.8/index.html"/>
 <node CREATED="1587635485087" FOLDED="true" ID="ID_664505517" MODIFIED="1588256367183" TEXT="tutorial">
 <node CREATED="1587635495416" ID="ID_1967656544" MODIFIED="1587635497171" TEXT="https://docs.python.org/3.8/tutorial/index.html"/>
@@ -1439,7 +1440,7 @@
 <node CREATED="1588255315669" ID="ID_957250202" MODIFIED="1588260627721" TEXT="python -V"/>
 </node>
 <node CREATED="1588253955623" ID="ID_980763013" MODIFIED="1592465141398" POSITION="right" TEXT="packages">
-<node CREATED="1588253964762" FOLDED="true" ID="ID_1956256509" MODIFIED="1591689524904" TEXT="pip">
+<node CREATED="1588253964762" FOLDED="true" ID="ID_1956256509" MODIFIED="1592560736678" TEXT="pip">
 <node CREATED="1588255626040" ID="ID_1431388667" MODIFIED="1588255646953" TEXT="reference">
 <node CREATED="1588255633108" ID="ID_292142337" MODIFIED="1588255638707" TEXT="https://pip.pypa.io/en/stable/#"/>
 </node>
@@ -1459,7 +1460,7 @@
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1588254910103" ID="ID_622588837" MODIFIED="1588258094119" TEXT="CentOS7">
+<node CREATED="1588254910103" ID="ID_622588837" MODIFIED="1592554055187" TEXT="CentOS7 (default not install pip)">
 <node CREATED="1588254705732" ID="ID_360152069" MODIFIED="1588255029027">
 <richcontent TYPE="NODE"><html>
   <head>
@@ -1481,8 +1482,8 @@
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1588254298031" ID="ID_558712298" MODIFIED="1588254577938" TEXT="# install pip&#xa;$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py     &#xa;$ python get-pip.py     &#xa;$ pip --version"/>
-<node CREATED="1588254415676" ID="ID_142031716" MODIFIED="1588254494227">
+<node CREATED="1588254298031" ID="ID_558712298" MODIFIED="1592553635886" TEXT="# install pip&#xa;curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py     &#xa;python get-pip.py     &#xa;pip --version"/>
+<node CREATED="1588254415676" ID="ID_142031716" MODIFIED="1592553668352">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -1492,10 +1493,11 @@
       # upgrade pip setuptools and whell to latest version
     </p>
     <p>
-      $ python -m pip install --upgrade pip setuptools wheel&#160;
+      python -m pip install --upgrade pip setuptools wheel&#160;
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 </node>
 </node>
@@ -3228,8 +3230,7 @@ boto3           1.13.19                                                         
       $ panxapi.py -t xapilab -Xxo 'show clock'
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1591759682275" ID="ID_1923725240" MODIFIED="1591773472286" TEXT="command">
@@ -3303,8 +3304,7 @@ boto3           1.13.19                                                         
       panxapi.py -gxr &quot;/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address/entry[@name='172.16.1.2']&quot;
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
@@ -3325,8 +3325,7 @@ boto3           1.13.19                                                         
       panxapi.py -C '' --sync
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1591773533759" ID="ID_1705960651" MODIFIED="1591773538445" TEXT="delete">
@@ -3343,8 +3342,7 @@ boto3           1.13.19                                                         
       panxapi.py -dx &quot;/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address/entry[@name='172.16.1.2']&quot;
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>

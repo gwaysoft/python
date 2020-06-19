@@ -2,7 +2,6 @@ class Swan:
     def __init__(self, width, height):
         self._width = width
         self._height = height
-    
     @property
     def area(self):
         return self._width * self._height

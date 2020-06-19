@@ -15,7 +15,7 @@ filter1 = logging.Filter(str)
 
 
 # file
-fileHandler = logging.FileHandler("./standard/logging/log.txt")
+fileHandler = logging.FileHandler("./log.log")
 fileHandler.setFormatter(formatter)
 fileHandler.addFilter(filter1)
 
@@ -27,11 +27,8 @@ streamHandler.setFormatter(formatter)
 # logger
 logger = logging.getLogger(str)
 logger.setLevel(level = logging.DEBUG)
-logger.addHandler(fileHandler)
+# logger.addHandler(fileHandler)
 logger.addHandler(streamHandler)
-
-
-
 
 
 logger.info("info")
