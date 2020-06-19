@@ -1,0 +1,44 @@
+INFO - 2020-06-18 15:43:40,085 - info
+WARNING - 2020-06-18 15:43:40,086 - warning
+ERROR - 2020-06-18 15:43:40,086 - error
+CRITICAL - 2020-06-18 15:43:40,086 - critical
+INFO - MainThread - 2020-06-18 15:44:40,613 - info
+DEBUG - MainThread - 2020-06-18 15:44:40,614 - debug
+WARNING - MainThread - 2020-06-18 15:44:40,614 - warning
+ERROR - MainThread - 2020-06-18 15:44:40,614 - error
+CRITICAL - MainThread - 2020-06-18 15:44:40,614 - critical
+ 2020-06-18 16:07:50 - INFO - <module> - info
+ 2020-06-18 16:07:50 - DEBUG - <module> - debug
+ 2020-06-18 16:07:50 - WARNING - <module> - warning
+ 2020-06-18 16:07:50 - ERROR - <module> - error
+ 2020-06-18 16:07:50 - CRITICAL - <module> - critical
+ 2020-06-18 16:10:23 - INFO - <module> - info
+ 2020-06-18 16:10:23 - DEBUG - <module> - debug
+ 2020-06-18 16:10:23 - WARNING - <module> - warning
+ 2020-06-18 16:10:23 - ERROR - <module> - error
+ 2020-06-18 16:10:23 - CRITICAL - <module> - critical
+2020-06-18 16:10:56 - INFO - <module> - info
+2020-06-18 16:10:56 - DEBUG - <module> - debug
+2020-06-18 16:10:56 - WARNING - <module> - warning
+2020-06-18 16:10:56 - ERROR - <module> - error
+2020-06-18 16:10:56 - CRITICAL - <module> - critical
+2020-06-18 16:11:42 - INFO - <module> - info
+2020-06-18 16:11:42 - DEBUG - <module> - debug
+2020-06-18 16:11:42 - WARNING - <module> - warning
+2020-06-18 16:11:42 - ERROR - <module> - error
+2020-06-18 16:11:42 - CRITICAL - <module> - critical
+2020-06-18 16:38:07 - INFO - <module> - info
+2020-06-18 16:38:07 - DEBUG - <module> - debug
+2020-06-18 16:38:07 - WARNING - <module> - warning
+2020-06-18 16:38:07 - ERROR - <module> - error
+2020-06-18 16:38:07 - CRITICAL - <module> - critical
+2020-06-18 16:40:43 - INFO - <module> - info
+2020-06-18 16:40:43 - DEBUG - <module> - debug
+2020-06-18 16:40:43 - WARNING - <module> - warning
+2020-06-18 16:40:43 - ERROR - <module> - error
+2020-06-18 16:40:43 - CRITICAL - <module> - critical
+2020-06-18 16:51:04 - INFO - <module> - info
+2020-06-18 16:51:04 - DEBUG - <module> - debug
+2020-06-18 16:51:04 - WARNING - <module> - warning
+2020-06-18 16:51:04 - ERROR - <module> - error
+2020-06-18 16:51:04 - CRITICAL - <module> - critical
