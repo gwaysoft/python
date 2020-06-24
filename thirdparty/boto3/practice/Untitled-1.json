@@ -1,25 +1,32 @@
-{'Name': 'AWS-AWSManagedRulesCommonRuleSet', 'Priority': 1, 'Statement': {'ManagedRuleGroupStatement': {'VendorName': 'AWS', 'Name': 'AWSManagedRulesCommonRuleSet', 'ExcludedRules': [
-                {'Name': 'SizeRestrictions_Cookie_HEADER'
-                },
-                {'Name': 'SizeRestrictions_BODY'
-                },
-                {'Name': 'SizeRestrictions_QUERYSTRING'
-                },
-                {'Name': 'NoUserAgent_HEADER'
-                },
-                {'Name': 'UserAgent_BadBots_HEADER'
-                }
-            ]
-        }
-    }, 'OverrideAction': {'None': {}
-    }, 'VisibilityConfig': {'SampledRequestsEnabled': True, 'CloudWatchMetricsEnabled': True, 'MetricName': 'AWS-AWSManagedRulesCommonRuleSet'
-    }
-}
 [
-    {'Name': 'AWS-AWSManagedRulesCommonRuleSet', 'Priority': 0, 'Statement': {'ManagedRuleGroupStatement': {'VendorName': 'AWS', 'Name': 'AWSManagedRulesCommonRuleSet'
+    {'Name': 'AWS-AWSManagedRulesCommonRuleSet', 'Priority': 0, 'Statement': {'ManagedRuleGroupStatement': {'VendorName': 'AWS', 'Name': 'AWSManagedRulesCommonRuleSet', 'ExcludedRules': [
+                    {'Name': 'SizeRestrictions_Cookie_HEADER'
+                    },
+                    {'Name': 'SizeRestrictions_BODY'
+                    },
+                    {'Name': 'SizeRestrictions_QUERYSTRING'
+                    },
+                    {'Name': 'NoUserAgent_HEADER'
+                    },
+                    {'Name': 'UserAgent_BadBots_HEADER'
+                    },
+                    {'Name': 'EC2MetaDataSSRF_BODY'
+                    },
+                    {'Name': 'EC2MetaDataSSRF_URIPATH'
+                    }
+                ]
             }
         }, 'OverrideAction': {'None': {}
         }, 'VisibilityConfig': {'SampledRequestsEnabled': True, 'CloudWatchMetricsEnabled': True, 'MetricName': 'AWS-AWSManagedRulesCommonRuleSet'
+        }
+    },
+    {'Name': 'AWS-AWSManagedRulesAnonymousIpList', 'Priority': 1, 'Statement': {'ManagedRuleGroupStatement': {'VendorName': 'AWS', 'Name': 'AWSManagedRulesAnonymousIpList', 'ExcludedRules': [
+                    {'Name': 'AnonymousIPList'
+                    }
+                ]
+            }
+        }, 'OverrideAction': {'Count': {}
+        }, 'VisibilityConfig': {'SampledRequestsEnabled': True, 'CloudWatchMetricsEnabled': True, 'MetricName': 'AWS-AWSManagedRulesAnonymousIpList'
         }
     }
 ]
