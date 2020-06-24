@@ -1496,8 +1496,7 @@
       python -m pip install --upgrade pip setuptools wheel&#160;
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
@@ -3151,11 +3150,29 @@
 <node CREATED="1589267851861" ID="ID_588040494" MODIFIED="1589267856799" TEXT="flask">
 <node CREATED="1589267856800" ID="ID_1722157651" MODIFIED="1589267866619" TEXT="pip install flask"/>
 </node>
-<node CREATED="1591686938498" FOLDED="true" ID="ID_1592632392" MODIFIED="1592465150216" TEXT="aws">
+<node CREATED="1591686938498" FOLDED="true" ID="ID_1592632392" MODIFIED="1592964814920" TEXT="aws">
 <node CREATED="1590570893851" ID="ID_65372571" MODIFIED="1591752673858" TEXT="boto3">
-<node CREATED="1591079621585" ID="ID_1351671460" MODIFIED="1591079677276" TEXT="https://docs.aws.amazon.com/pythonsdk/?id=docs_gateway"/>
-<node CREATED="1590737663285" ID="ID_927127136" MODIFIED="1590737666610" TEXT="https://aws.amazon.com/sdk-for-python/"/>
-<node CREATED="1590570880213" ID="ID_1957017394" MODIFIED="1590570884652" TEXT="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"/>
+<node CREATED="1592882505567" ID="ID_1726847839" MODIFIED="1592882508266" TEXT="reference">
+<node CREATED="1592884090171" ID="ID_1460139341" MODIFIED="1592884663801" TEXT="overview (best practice)">
+<node CREATED="1592884092085" ID="ID_1216235417" MODIFIED="1592884093088" TEXT="https://aws.amazon.com/sdk-for-python/"/>
+<node CREATED="1592882722099" ID="ID_1647012393" MODIFIED="1592882723272" TEXT="api">
+<node CREATED="1592882724187" ID="ID_1097363148" MODIFIED="1592882725130" TEXT="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/index.html"/>
+</node>
+</node>
+<node CREATED="1592882622573" ID="ID_535493889" MODIFIED="1592884151136" TEXT="others">
+<node CREATED="1591079621585" ID="ID_1351671460" MODIFIED="1592882606302" TEXT="https://docs.aws.amazon.com/pythonsdk/"/>
+<node CREATED="1592890094441" ID="ID_545278645" MODIFIED="1592890095356" TEXT="https://aws.amazon.com/visualstudiocode/"/>
+</node>
+</node>
+<node CREATED="1592885367907" ID="ID_1431469993" MODIFIED="1592885391336" TEXT="ide">
+<node CREATED="1592885372915" ID="ID_976637369" MODIFIED="1592885375739" TEXT="vs code">
+<node CREATED="1592885375740" ID="ID_455267085" MODIFIED="1592885376585" TEXT="https://aws.amazon.com/visualstudiocode/"/>
+</node>
+</node>
+<node CREATED="1592884699859" ID="ID_1667439634" MODIFIED="1592884707200" TEXT="practice">
+<node CREATED="1592882488055" ID="ID_1500716847" MODIFIED="1592882492972" TEXT="quickstart">
+<node CREATED="1592882492972" ID="ID_1611353661" MODIFIED="1592882493832" TEXT="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html import boto3"/>
+<node CREATED="1592882615595" ID="ID_1830378063" MODIFIED="1592882617829" TEXT="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"/>
 <node CREATED="1590738091557" ID="ID_198823756" MODIFIED="1590738093198" TEXT="pip install boto3">
 <node CREATED="1590738122230" ID="ID_288913928" MODIFIED="1590738129246">
 <richcontent TYPE="NODE"><html>
@@ -3175,6 +3192,17 @@ boto3           1.13.19                                                         
     </table>
   </body>
 </html></richcontent>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1592884793331" ID="ID_1952105718" MODIFIED="1592884839752" TEXT="features">
+<node CREATED="1592884840724" ID="ID_1552096842" MODIFIED="1592884876224" TEXT="two distinct level of apis">
+<node CREATED="1592884877339" ID="ID_1901812895" MODIFIED="1592884887904" TEXT="client"/>
+<node CREATED="1592884889148" ID="ID_1933787227" MODIFIED="1592884970903" TEXT="resources">
+<node CREATED="1592884986045" ID="ID_384198666" MODIFIED="1592885003512" TEXT="object-oriented interface"/>
+<node CREATED="1592884971950" ID="ID_1601309389" MODIFIED="1592884984728" TEXT="resource(&quot;s3&quot;)"/>
+</node>
 </node>
 </node>
 </node>
@@ -3501,7 +3529,7 @@ boto3           1.13.19                                                         
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1588930378080" ID="ID_1549200366" MODIFIED="1588930383033" TEXT="filecmp">
+<node CREATED="1588930378080" FOLDED="true" ID="ID_1549200366" MODIFIED="1592880202419" TEXT="filecmp">
 <node CREATED="1588930642508" ID="ID_653834885" MODIFIED="1588930660622">
 <richcontent TYPE="NODE"><html>
   <head>
@@ -3541,7 +3569,7 @@ boto3           1.13.19                                                         
 <node CREATED="1588931276135" ID="ID_1918169544" MODIFIED="1588931280736" TEXT="result.common_files"/>
 </node>
 </node>
-<node CREATED="1588931383746" ID="ID_1597240870" MODIFIED="1588990170271" TEXT="smtplib">
+<node CREATED="1588931383746" FOLDED="true" ID="ID_1597240870" MODIFIED="1592880200622" TEXT="smtplib">
 <node CREATED="1588995218548" ID="ID_181606471" MODIFIED="1588995530351" TEXT="https://www.runoob.com/python/python-email.html">
 <node CREATED="1588995157242" ID="ID_908166085" MODIFIED="1589007029596" TEXT="">
 <richcontent TYPE="NOTE"><html>
@@ -3655,7 +3683,7 @@ boto3           1.13.19                                                         
 <node CREATED="1588990505562" ID="ID_1975781728" MODIFIED="1588990512596" TEXT="only send email"/>
 <node CREATED="1588990225054" ID="ID_1266550608" MODIFIED="1588990524953" TEXT="https://docs.python.org/3/library/smtplib.html"/>
 </node>
-<node CREATED="1592465099966" ID="ID_967537895" MODIFIED="1592465102916" TEXT="logging">
+<node CREATED="1592465099966" FOLDED="true" ID="ID_967537895" MODIFIED="1592880203755" TEXT="logging">
 <node CREATED="1592465236510" ID="ID_1024578357" MODIFIED="1592465239405" TEXT="https://www.bilibili.com/video/BV15J411T7WQ?p=450"/>
 <node CREATED="1592465240421" ID="ID_200375346" MODIFIED="1592465247417" TEXT="component">
 <node CREATED="1592465156362" ID="ID_823532742" MODIFIED="1592465163408" TEXT="logger"/>
@@ -3664,6 +3692,7 @@ boto3           1.13.19                                                         
 <node CREATED="1592465193044" ID="ID_272305803" MODIFIED="1592465210057" TEXT="formatter"/>
 </node>
 </node>
+<node CREATED="1592964819297" ID="ID_949430100" MODIFIED="1592964821391" TEXT="socket"/>
 </node>
 </node>
 </node>
