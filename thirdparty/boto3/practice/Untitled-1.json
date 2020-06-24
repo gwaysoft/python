@@ -30,3 +30,24 @@
         }
     }
 ]
+
+[
+    {'Name': 'AWS-AWSManagedRulesCommonRuleSet', 'Priority': 0, 'Statement': {'ManagedRuleGroupStatement': {'VendorName': 'AWS', 'Name': 'AWSManagedRulesCommonRuleSet', 'ExcludedRules': [
+                    {'Name': 'AnonymousIPList'
+                    }
+                ]
+            }
+        }, 'OverrideAction': {'None': {}
+        }, 'VisibilityConfig': {'SampledRequestsEnabled': True, 'CloudWatchMetricsEnabled': True, 'MetricName': 'AWS-AWSManagedRulesCommonRuleSet001'
+        }
+    },
+    {'Name': 'AWS-AWSManagedRulesAnonymousIpList', 'Priority': 1, 'Statement': {'ManagedRuleGroupStatement': {'VendorName': 'AWS', 'Name': 'AWSManagedRulesAnonymousIpList', 'ExcludedRules': [
+                    {'Name': 'AnonymousIPList'
+                    }
+                ]
+            }
+        }, 'OverrideAction': {'Count': {}
+        }, 'VisibilityConfig': {'SampledRequestsEnabled': True, 'CloudWatchMetricsEnabled': True, 'MetricName': 'AWS-AWSManagedRulesAnonymousIpList'
+        }
+    }
+]
