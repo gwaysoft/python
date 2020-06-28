@@ -7,5 +7,6 @@ def job():
 scheduler = BlockingScheduler()
 # scheduler.add_job(job, 'interval', seconds=10)
 
+
 scheduler.add_job(job, 'cron', second =10)
 scheduler.start()

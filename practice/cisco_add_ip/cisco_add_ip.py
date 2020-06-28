@@ -1,7 +1,3 @@
-
-
-domainList = ["sbig-gi-sandbox.in.ebaocloud.com", "sbig-gi.in.ebaocloud.com"]
-
 def getDomainIpList(domainList):
     import socket
     retList = []
@@ -62,8 +58,22 @@ def addIpListToCisco(ipList):
     print(output.decode('utf-8', 'ignore'))  # 打印输出
     cmd.close()  # 关闭交互式shell
 
+domainList = ["sbig-gi-sandbox.in.ebaocloud.com", "sbig-gi.in.ebaocloud.com"]
+
 def main():
-    print(getUpdateIpList(getDomainIpList(domainList)))
+    from apscheduler.schedulers.blocking import BlockingScheduler
+    from datetime import datetime
+    # 输出时间
+    def job():
+        print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        getUpdateIpList(getDomainIpList(domainList))
+
+    # BlockingScheduler
+    scheduler = BlockingScheduler()
+    # scheduler.add_job(job, 'interval', seconds=20)
+
+    scheduler.add_job(job, 'cron', second=10)
+    scheduler.start()
 
 
 if __name__ == "__main__":
