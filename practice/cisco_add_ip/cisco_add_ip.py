@@ -1,92 +1,103 @@
+import myLogger
+
+logger = myLogger.getLogger()
+
+
 def getItemList(fileName):
     import configparser
     config = configparser.ConfigParser(allow_no_value=True)
-
     config.read(fileName)
 
     keys = config["default"].keys()
     return list(keys), config
 
+
 def getDomainIpList(domainList):
     import socket
     retList = []
+    logger.debug("domainList: " + str(domainList))
     for domain in domainList:
+        # logger.debug(type(domain))
         ip = socket.gethostbyname(domain)
         retList.append(ip)
     return retList
 
-# print(getDomainIpList(domainList))
+
+def addIpListToCisco(addIpList):
+    logger.debug("addIpList: " + str(addIpList))
+    config_commands = ['ip access-list extended VM']
+
+    addIpCmdHeader = "permit ip any host "
+
+    for ip in addIpList:
+        config_commands.append(addIpCmdHeader + ip)
+    logger.debug(config_commands)
+
+    from netmiko import ConnectHandler
+
+    connectConfig = {
+        'device_type': 'cisco_ios',
+        'host': '172.16.30.250',
+        'username': 'weifei.shen',
+        'password': 'pl24680QW'
+    }
+    net_connect = ConnectHandler(**connectConfig)
+    output = net_connect.send_config_set(config_commands)
+    logger.debug(output)
+
+    output = net_connect.send_command("wr")
+    logger.debug(output)
+
+    for ip in addIpList:
+        output = net_connect.send_command("sh startup-config | inc any host " + ip)
+        logger.info(output)
+
 
 def getUpdateIpList(ipList):
     existedList, config = getItemList("novalue.ini")
 
-    print(existedList)
+    # logger.debug("existedList: " + str(existedList))
 
-    subtraction = list(set(ipList).difference(set(existedList)))
-    print(subtraction)
+    addIpList = list(set(ipList).difference(set(existedList)))
 
-    for ip in subtraction:
+    if len(addIpList) == 0:
+        logger.debug("Not changes, thanks.")
+        return addIpList
+
+    addIpListToCisco(addIpList)
+
+    for ip in addIpList:
         print("ip: ", ip)
         config.set("default", ip)
 
     with open('novalue.ini', 'w') as fp:
         config.write(fp)
-    return subtraction
+    return addIpList
 
-def addIpListToCisco(ipList):
-    import paramiko  # 导入paramiko模块
-    import time  # 导入time模块，这个后面会用到
-    host = '172.16.30.250'  # 定义主机IP
-    user = 'weifei.shen'  # 定义登录的用户名
-    passwd = 'PL24680qw'  # 定义使用的密码
-    s = paramiko.SSHClient()  # 实例化，啥意思?请看注释①
-    s.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # 请看注释②
-    s.connect(host, username=user, password=passwd, look_for_keys=False, allow_agent=False)  # 定义登录的IP、用户名和密码
-    print('login success.')  # 登录成功提示
-    cmd = s.invoke_shell()  # 创建一个交互式的shell，实现多发送条命令
-    # cmd.send("conf t \n")   # 发送命令
-    # time.sleep(1)           # 睡眠1s，特别重要，注释③
-    # cmd.send("int f0/1 \n")
-    # time.sleep(1)
-    # cmd.send("ip add 1.1.1.2 255.255.255.0 \n")
-    # time.sleep(1)
-    # cmd.send("end \n")
-    # time.sleep(1)
-    # cmd.send("show ip int bri\n ")
-    cmd.send("show clock\n")
-    time.sleep(1)
-    cmd.send("show ip int bri\n ")
-    time.sleep(1)
-    output = cmd.recv(65535)  # 接收输出
-    print(output.decode('utf-8', 'ignore'))  # 打印输出
-    cmd.close()  # 关闭交互式shell
+def job():
+    getUpdateIpList(getDomainIpList(getItemList("domains.ini")[0]))
 
-def scheduleJob():
+
+def scheduleJob(job):
     from apscheduler.schedulers.blocking import BlockingScheduler
     from datetime import datetime
     # 输出时间
-    def job():
-        print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-        getUpdateIpList(getDomainIpList(domainList))
+
+
     # BlockingScheduler
     scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'interval', seconds=15)
+    scheduler.add_job(job, 'interval', seconds=30)
     # scheduler.add_job(job, 'interval', minutes=10)
     # scheduler.add_job(job, 'cron', second=15)
     # nohup python3 -u cisco_add_ip.py > test.log 2>&1 &
     scheduler.start()
 
 
-domainList = ["sbig-gi-sandbox.in.ebaocloud.com", "sbig-gi.in.ebaocloud.com"]
-
 def main():
-    scheduleJob()
+    scheduleJob(job)
+    # job()
     # pass
 
 
 if __name__ == "__main__":
     main()
-
-
-
- 

@@ -1,8 +1,4 @@
 import sys
-# abstract path
-# sys.path.append("D:/project/python/basic/module/custom/createModule")
-sys.path.append("./createModule")
-
 import createModuleDemo as mo, os
 from createModuleDemo01 import add as a
 from createModuleDemo02 import *
