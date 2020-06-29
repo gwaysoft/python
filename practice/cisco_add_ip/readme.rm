@@ -1,2 +1,8 @@
-domains.ini file is to add domain to parse ip
-log/log.log is a log file
+execute
+    python3 main.py at centOS7
+domains.ini
+    edit domain dynamically
+    parse from domain to ip
+log/log.log
+    a log file
+    time rotate daily

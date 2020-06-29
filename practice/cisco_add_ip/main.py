@@ -38,8 +38,8 @@ def addIpListToCisco(addIpList):
     connectConfig = {
         'device_type': 'cisco_ios',
         'host': '172.16.30.250',
-        'username': 'weifei.shen',
-        'password': 'pl24680QW'
+        'username': 'networkconfig',
+        'password': 'Ebaotech2020'
     }
     net_connect = ConnectHandler(**connectConfig)
     output = net_connect.send_config_set(config_commands)
@@ -67,7 +67,7 @@ def getUpdateIpList(ipList):
     addIpListToCisco(addIpList)
 
     for ip in addIpList:
-        print("ip: ", ip)
+        # print("ip: ", ip)
         config.set("default", ip)
 
     with open('novalue.ini', 'w') as fp:
@@ -86,13 +86,13 @@ def scheduleJob(job):
     scheduler.add_job(job, 'interval', seconds=30)
     # scheduler.add_job(job, 'interval', minutes=10)
     # scheduler.add_job(job, 'cron', second=15)
-    # nohup python3 -u cisco_add_ip.py > test.log 2>&1 &
+    # nohup python3 -u main.py > test.log 2>&1 &
     scheduler.start()
 
 
 def main():
-    scheduleJob(job)
-    # job()
+    # scheduleJob(job)
+    job()
     # pass
 
 
