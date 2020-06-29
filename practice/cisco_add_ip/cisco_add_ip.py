@@ -1,3 +1,12 @@
+def getItemList(fileName):
+    import configparser
+    config = configparser.ConfigParser(allow_no_value=True)
+
+    config.read(fileName)
+
+    keys = config["default"].keys()
+    return list(keys), config
+
 def getDomainIpList(domainList):
     import socket
     retList = []
@@ -9,13 +18,7 @@ def getDomainIpList(domainList):
 # print(getDomainIpList(domainList))
 
 def getUpdateIpList(ipList):
-    import configparser
-    config = configparser.ConfigParser(allow_no_value=True)
-
-    config.read("novalue.ini")
-
-    keys = config["default"].keys()
-    existedList = list(keys)
+    existedList, config = getItemList("novalue.ini")
 
     print(existedList)
 
@@ -58,22 +61,27 @@ def addIpListToCisco(ipList):
     print(output.decode('utf-8', 'ignore'))  # 打印输出
     cmd.close()  # 关闭交互式shell
 
-domainList = ["sbig-gi-sandbox.in.ebaocloud.com", "sbig-gi.in.ebaocloud.com"]
-
-def main():
+def scheduleJob():
     from apscheduler.schedulers.blocking import BlockingScheduler
     from datetime import datetime
     # 输出时间
     def job():
         print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         getUpdateIpList(getDomainIpList(domainList))
-
     # BlockingScheduler
     scheduler = BlockingScheduler()
-    # scheduler.add_job(job, 'interval', seconds=20)
-
-    scheduler.add_job(job, 'cron', second=10)
+    scheduler.add_job(job, 'interval', seconds=15)
+    # scheduler.add_job(job, 'interval', minutes=10)
+    # scheduler.add_job(job, 'cron', second=15)
+    # nohup python3 -u cisco_add_ip.py > test.log 2>&1 &
     scheduler.start()
+
+
+domainList = ["sbig-gi-sandbox.in.ebaocloud.com", "sbig-gi.in.ebaocloud.com"]
+
+def main():
+    scheduleJob()
+    # pass
 
 
 if __name__ == "__main__":
