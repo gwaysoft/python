@@ -80,9 +80,6 @@ def job():
 
 def scheduleJob(job):
     from apscheduler.schedulers.blocking import BlockingScheduler
-    from datetime import datetime
-    # 输出时间
-
 
     # BlockingScheduler
     scheduler = BlockingScheduler()
