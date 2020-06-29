@@ -1,3 +1,6 @@
+pip
+    pip3 install netmiko
+    pip3 install apscheduler
 execute
     python3 main.py at centOS7
 domains.ini
