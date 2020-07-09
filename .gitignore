@@ -1,5 +1,6 @@
 # customized
 *.temp.*
+temp.*
 *.log.*
 .idea/
 .vscode/
