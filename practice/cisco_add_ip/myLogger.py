@@ -5,9 +5,18 @@ def getLogger(consoleLevel = logging.DEBUG, fileLevel = logging.INFO, fileName =
     logger.setLevel(logging.DEBUG)
     # create file handler which logs even debug messages
     # log directory
+    # import os
+    # genpath = os.getcwd()
+    # logpath = os.path.join(genpath, "log")  # 拼接log文件路径
+    #
+    # if os.path.exists(logpath):  # 判断路径是否存在，不存在则创建
+    #     pass
+    # else:
+    #     os.makedirs(logpath)
+    # logFileName = logpath + "/log.log"
+
     import os
-    genpath = os.getcwd()
-    logpath = os.path.join(genpath, "log")  # 拼接log文件路径
+    logpath = "/var/log/python/cisco_add_id"  # 拼接log文件路径
 
     if os.path.exists(logpath):  # 判断路径是否存在，不存在则创建
         pass

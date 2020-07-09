@@ -16,8 +16,8 @@ net_connect = PaloAltoPanosSSH(**connectConfig)
 
 config_commands = ['set address test-003 tag insideIP ip-netmask 255.255.255.0',
                    'set address test-004 tag insideIP ip-netmask 255.255.255.0',
-                   'set address test-005 tag insideIP ip-netmask 255.255.255.0']
-                   # ,"commit"]
+                   'set address test-006 tag insideIP ip-netmask 255.255.255.0',
+                   "commit"]
 # config_commands = ['delete address test-002 tag insideIP']
 
 output = net_connect.send_config_set(config_commands)

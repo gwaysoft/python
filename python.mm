@@ -1434,7 +1434,7 @@
 </node>
 <node CREATED="1588149491774" ID="ID_159937859" MODIFIED="1588253926859" TEXT="CentOS7">
 <node CREATED="1588045840540" ID="ID_1705923478" MODIFIED="1591673960795" TEXT="! CentOS7 upgrade python2 -&gt; python3">
-<node CREATED="1591674109519" ID="ID_436708092" MODIFIED="1591674490583" TEXT="# yum search python3&#xa;yum install -y python36 python36-virtualenv python36-pip git&#xa;# sudo ln -sf /usr/bin/pip-3.6 /usr/bin/pip3&#xa;# sudo ln -sf /usr/bin/pip-2.7 /usr/bin/pip27"/>
+<node CREATED="1591674109519" ID="ID_436708092" MODIFIED="1593505784518" TEXT="# yum search python3&#xa;yum install python3&#xa;# yum install -y python36 python36-virtualenv python36-pip git&#xa;# sudo ln -sf /usr/bin/pip-3.6 /usr/bin/pip3&#xa;# sudo ln -sf /usr/bin/pip-2.7 /usr/bin/pip27"/>
 </node>
 <node CREATED="1593399985554" ID="ID_516359807" MODIFIED="1593399994434" TEXT="demand">
 <node CREATED="1593400097136" ID="ID_1032221698" MODIFIED="1593400098273" TEXT="getUpdateIpList(getDomainIpList(domainList))"/>

@@ -6,7 +6,8 @@ logger = myLogger.getLogger()
 def getItemList(fileName):
     import configparser
     config = configparser.ConfigParser(allow_no_value=True)
-    config.read(fileName)
+    config.read("/root/python/cisco_add_ip/"+fileName)
+    # config.read(fileName)
 
     keys = config["default"].keys()
     return list(keys), config
@@ -23,7 +24,7 @@ def getDomainIpList(domainList):
     return retList
 
 
-def addIpListToCisco(addIpList):
+def addIpListToCisco(addIpList, cisco_ip):
     logger.debug("addIpList: " + str(addIpList))
     config_commands = ['ip access-list extended VM']
 
@@ -37,7 +38,7 @@ def addIpListToCisco(addIpList):
 
     connectConfig = {
         'device_type': 'cisco_ios',
-        'host': '172.16.30.250',
+        'host': cisco_ip,
         'username': 'networkconfig',
         'password': 'Ebaotech2020'
     }
@@ -50,7 +51,7 @@ def addIpListToCisco(addIpList):
 
     for ip in addIpList:
         output = net_connect.send_command("sh startup-config | inc any host " + ip)
-        logger.info(output)
+        logger.info(cisco_ip + " " + output)
 
 
 def getUpdateIpList(ipList):
@@ -64,15 +65,17 @@ def getUpdateIpList(ipList):
         logger.debug("Not changes, thanks.")
         return addIpList
 
-    addIpListToCisco(addIpList)
+    addIpListToCisco(addIpList, "172.16.30.250")
+    addIpListToCisco(addIpList, "172.16.30.251")
 
     for ip in addIpList:
         # print("ip: ", ip)
         config.set("default", ip)
 
-    with open('novalue.ini', 'w') as fp:
+    with open("/root/python/cisco_add_ip/" + 'novalue.ini', 'w') as fp:
         config.write(fp)
     return addIpList
+
 
 def job():
     getUpdateIpList(getDomainIpList(getItemList("domains.ini")[0]))
@@ -83,8 +86,8 @@ def scheduleJob(job):
 
     # BlockingScheduler
     scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'interval', seconds=30)
-    # scheduler.add_job(job, 'interval', minutes=10)
+    # scheduler.add_job(job, 'interval', seconds=30)
+    scheduler.add_job(job, 'interval', minutes=10)
     # scheduler.add_job(job, 'cron', second=15)
     # nohup python3 -u main.py > test.log 2>&1 &
     scheduler.start()
