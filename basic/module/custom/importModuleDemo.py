@@ -11,7 +11,7 @@ from createModuleDemo02 import *
 print(sys.path)
 print(mo.add(3, 4.555))
 
-print(a(30, 4))
-print(add(34, 4))
-# show method
-print(dir())
+# print(a(30, 4))
+# print(add(34, 4))
+# # show method
+# print(dir())

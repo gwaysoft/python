@@ -1433,8 +1433,8 @@
 <node CREATED="1588260580841" ID="ID_878144467" MODIFIED="1588260599601" TEXT="download &amp; install"/>
 </node>
 <node CREATED="1588149491774" ID="ID_159937859" MODIFIED="1588253926859" TEXT="CentOS7">
-<node CREATED="1588045840540" ID="ID_1705923478" MODIFIED="1591673960795" TEXT="! CentOS7 upgrade python2 -&gt; python3">
-<node CREATED="1591674109519" ID="ID_436708092" MODIFIED="1593505784518" TEXT="# yum search python3&#xa;yum install python3&#xa;# yum install -y python36 python36-virtualenv python36-pip git&#xa;# sudo ln -sf /usr/bin/pip-3.6 /usr/bin/pip3&#xa;# sudo ln -sf /usr/bin/pip-2.7 /usr/bin/pip27"/>
+<node CREATED="1588045840540" ID="ID_1705923478" MODIFIED="1594973401582" TEXT="CentOS7 upgrade python2 -&gt; python3">
+<node CREATED="1591674109519" ID="ID_436708092" MODIFIED="1594973716749" TEXT="# yum search python3&#xa;yum install python3&#xa;# yum install -y python36 python36-virtualenv python36-pip git&#xa;# add symbolic link for python and pip&#xa;ll /bin/ | grep python&#xa;rm -rf python&#xa;ln -s python3.6 python&#xa;ln -s ./pip3.6 pip"/>
 </node>
 <node CREATED="1593399985554" ID="ID_516359807" MODIFIED="1593399994434" TEXT="demand">
 <node CREATED="1593400097136" ID="ID_1032221698" MODIFIED="1593400098273" TEXT="getUpdateIpList(getDomainIpList(domainList))"/>
@@ -1443,7 +1443,7 @@
 </node>
 <node CREATED="1588255315669" ID="ID_957250202" MODIFIED="1588260627721" TEXT="python -V"/>
 </node>
-<node CREATED="1588253955623" ID="ID_980763013" MODIFIED="1593414646996" POSITION="right" TEXT="packages">
+<node CREATED="1588253955623" ID="ID_980763013" MODIFIED="1595231237607" POSITION="right" TEXT="packages">
 <node CREATED="1588253964762" FOLDED="true" ID="ID_1956256509" MODIFIED="1592560736678" TEXT="pip">
 <node CREATED="1588255626040" ID="ID_1431388667" MODIFIED="1588255646953" TEXT="reference">
 <node CREATED="1588255633108" ID="ID_292142337" MODIFIED="1588255638707" TEXT="https://pip.pypa.io/en/stable/#"/>
@@ -3151,9 +3151,6 @@
 <node CREATED="1589268612278" ID="ID_422098264" MODIFIED="1589268615872" TEXT="gunicorn -b 0.0.0.0:8000 myapp:app"/>
 </node>
 </node>
-<node CREATED="1589267851861" ID="ID_588040494" MODIFIED="1589267856799" TEXT="flask">
-<node CREATED="1589267856800" ID="ID_1722157651" MODIFIED="1589267866619" TEXT="pip install flask"/>
-</node>
 <node CREATED="1591686938498" ID="ID_1592632392" MODIFIED="1592969863121" TEXT="aws">
 <node CREATED="1590570893851" ID="ID_65372571" MODIFIED="1591752673858" TEXT="boto3">
 <node CREATED="1592882505567" ID="ID_1726847839" MODIFIED="1592882508266" TEXT="reference">
@@ -3219,7 +3216,7 @@ boto3           1.13.19                                                         
 </node>
 </node>
 </node>
-<node CREATED="1591689528480" ID="ID_558623223" MODIFIED="1593414649316" TEXT="pan-python">
+<node CREATED="1591689528480" FOLDED="true" ID="ID_558623223" MODIFIED="1594954644095" TEXT="pan-python">
 <node CREATED="1591689559024" ID="ID_1929687816" MODIFIED="1593414667461" TEXT="http://api-lab.paloaltonetworks.com/pan-python.html">
 <node CREATED="1591689565145" ID="ID_1510121465" MODIFIED="1591689586618" TEXT="pip install pan-python">
 <node CREATED="1591689586619" ID="ID_1237240026" MODIFIED="1591689628039">
@@ -3389,6 +3386,7 @@ boto3           1.13.19                                                         
 </node>
 <node CREATED="1591689915731" ID="ID_792688278" MODIFIED="1591689944914" TEXT="https://github.com/kevinsteves/pan-python"/>
 </node>
+<node CREATED="1595231239082" ID="ID_373122937" MODIFIED="1595231243771" TEXT="ipython"/>
 </node>
 <node CREATED="1587635001754" ID="ID_1691166028" MODIFIED="1587976530516" POSITION="left" TEXT="tools">
 <node CREATED="1587635004594" ID="ID_1719581009" MODIFIED="1587699915601" TEXT="IDLE (&#x81ea;&#x5e26;)">
@@ -3456,16 +3454,19 @@ boto3           1.13.19                                                         
 </node>
 </node>
 </node>
+<node CREATED="1595033579120" ID="ID_553168804" MODIFIED="1595033587946" TEXT="pycharm license">
+<node CREATED="1595217465585" ID="ID_1218892322" MODIFIED="1595217479182" TEXT="http://idea.medeming.com/jets/"/>
 </node>
 </node>
 </node>
-<node CREATED="1588910731442" FOLDED="true" ID="ID_1336411237" MODIFIED="1593399974634" POSITION="right" TEXT="functions">
+</node>
+<node CREATED="1588910731442" FOLDED="true" ID="ID_1336411237" MODIFIED="1594965504920" POSITION="right" TEXT="functions">
 <node CREATED="1588910738874" ID="ID_1929523918" MODIFIED="1588910742520" TEXT="list()"/>
 <node CREATED="1588910743844" ID="ID_1639707376" MODIFIED="1588910749736" TEXT="int()"/>
 <node CREATED="1588910751211" ID="ID_25322801" MODIFIED="1588910754208" TEXT="float()"/>
 <node CREATED="1588910755538" ID="ID_689317114" MODIFIED="1588910757968" TEXT="len()"/>
 </node>
-<node CREATED="1588924875336" FOLDED="true" ID="ID_130872179" MODIFIED="1593399968644" POSITION="right" TEXT="default package">
+<node CREATED="1588924875336" ID="ID_130872179" MODIFIED="1594965499709" POSITION="right" TEXT="default package">
 <node CREATED="1588926464222" ID="ID_438706406" MODIFIED="1588926466586" TEXT="3">
 <node CREATED="1588924893970" ID="ID_248413037" MODIFIED="1588924915894" TEXT="http.client">
 <node CREATED="1588924906136" ID="ID_272877195" MODIFIED="1588924906957" TEXT="https://docs.python.org/3/library/http.client.html"/>
@@ -3705,6 +3706,392 @@ boto3           1.13.19                                                         
 </node>
 </node>
 <node CREATED="1592964819297" ID="ID_949430100" MODIFIED="1592964821391" TEXT="socket"/>
+</node>
+</node>
+<node CREATED="1595031542016" ID="ID_901640887" MODIFIED="1595231231627" POSITION="right" TEXT="web framework">
+<node CREATED="1595031591584" FOLDED="true" ID="ID_1543768441" MODIFIED="1595237718147" TEXT="wsgi">
+<node CREATED="1595032883598" ID="ID_1341210939" MODIFIED="1595032918572" TEXT="overview">
+<node CREATED="1595032887420" ID="ID_624027718" MODIFIED="1595032915555">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <img src="python_pic/wsgi_overview.png" />
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1595031617698" ID="ID_26302413" MODIFIED="1595031636590" TEXT="web sever gateway interface">
+<node CREATED="1595032410939" ID="ID_1915558607" MODIFIED="1595032429896" TEXT="wsgi sever -&gt; wsgi app">
+<node CREATED="1595032433079" ID="ID_1512576569" MODIFIED="1595032436791" TEXT="environ">
+<node CREATED="1595032704280" ID="ID_1658739977" MODIFIED="1595032708087" TEXT="dictionary"/>
+</node>
+<node CREATED="1595032438505" ID="ID_1652958403" MODIFIED="1595032446376" TEXT="start_response function"/>
+</node>
+<node CREATED="1595032635799" ID="ID_1306390287" MODIFIED="1595032647451" TEXT="wsgi app -&gt; wsgi server">
+<node CREATED="1595032668816" ID="ID_260801838" MODIFIED="1595032679623" TEXT="start_response">
+<node CREATED="1595032495769" ID="ID_908746304" MODIFIED="1595032691748" TEXT="app injure response headers"/>
+</node>
+<node CREATED="1595032648299" ID="ID_182349418" MODIFIED="1595032658016" TEXT="body"/>
+</node>
+</node>
+</node>
+<node CREATED="1589267851861" ID="ID_588040494" MODIFIED="1595216645346" TEXT="flask">
+<node CREATED="1594954813185" ID="ID_241048960" MODIFIED="1594954909879" TEXT="prerequisite">
+<node CREATED="1594959060131" FOLDED="true" ID="ID_1728919730" MODIFIED="1594974655110" TEXT="http overview">
+<node CREATED="1594959075003" ID="ID_1879830554" MODIFIED="1594959087016">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <img src="python_pic/http_overview.png" />
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1594966511042" FOLDED="true" ID="ID_1357214440" MODIFIED="1594974628190" TEXT="virtualenv">
+<node CREATED="1594960130299" ID="ID_1870109804" MODIFIED="1594960142151" TEXT="install virtualenv">
+<node CREATED="1594960068242" ID="ID_1948232717" MODIFIED="1594960125369">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      pip3 install virtualenv
+    </p>
+    <p>
+      pip3 install virtualenvwrapper
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1594960146851" ID="ID_1516955191" MODIFIED="1594960168119" TEXT="add mkvirtualenv command">
+<node CREATED="1594960169362" ID="ID_516778806" MODIFIED="1594960294970">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      mkdir $HOME/.virtualenvs
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      vi ~/.bashrc
+    </p>
+    <p>
+      export WORKON_HOME=$HOME/.virtualenvs
+    </p>
+    <p>
+      source /usr/local/bin/virtualenvwrapper.sh
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      source ~/.bashrc
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1594966448035" ID="ID_765450234" MODIFIED="1594966914495" TEXT="troubleshooting">
+<node CREATED="1594966897010" ID="ID_1643143752" MODIFIED="1594966917508" TEXT="/usr/bin/python: No module named virtualenvwrapper ">
+<node CREATED="1594973823360" ID="ID_1848048712" MODIFIED="1594973922114">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      # add symbolic link
+    </p>
+    <p>
+      ln -s /bin/python3.6 /bin/python
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1594973812360" ID="ID_1701604093" MODIFIED="1594973818052" TEXT="discarded">
+<node CREATED="1594966451635" ID="ID_1781310655" MODIFIED="1594966500354">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      vim /etc/profile
+    </p>
+    <p>
+      # last line
+    </p>
+    <p>
+      export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    </p>
+    <p>
+      export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      source /etc/profile
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1594967627066" ID="ID_1267091299" MODIFIED="1594968103698">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      # -p py, --python py&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;target interpreter for which to create a virtual (either absolute path or identifier string) (default: /usr/bin/python3)
+    </p>
+    <p>
+      # vim /etc/profile -&gt; last line -&gt; export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      mkvirtualenv -p /usr/bin/python3 pythonenv
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1594968454554" ID="ID_1131706329" MODIFIED="1594968463191" TEXT="pip freeze">
+<node CREATED="1594968464442" ID="ID_1568859567" MODIFIED="1594968542834">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      (pythonenv) $ pip freeze &gt; ~/requirment.txt
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      $ mkvirtualenv pythonenv3
+    </p>
+    <p>
+      $ pip install -r requirment.txt
+    </p>
+    <p>
+      $ pip freeze | pip list
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+<node CREATED="1594966521986" ID="ID_327661083" MODIFIED="1594966521986" TEXT="">
+<node CREATED="1594966587074" ID="ID_304045642" MODIFIED="1594966593743" TEXT="entry virtual">
+<node CREATED="1594966530291" ID="ID_518507222" MODIFIED="1594966534907" TEXT="workon">
+<node CREATED="1594966534907" ID="ID_1526607469" MODIFIED="1594966575602">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      $ workon
+    </p>
+    <p>
+      pythonenv
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1594966537723" ID="ID_1200310454" MODIFIED="1594967485020" TEXT="workon pythonenv"/>
+<node CREATED="1594967504010" ID="ID_987272250" MODIFIED="1594967528421" TEXT="(pythonenv) $ pip list">
+<node CREATED="1594967400770" ID="ID_1998071885" MODIFIED="1594967500861" TEXT="notice">
+<node CREATED="1594967407010" ID="ID_1837130756" MODIFIED="1594967453938">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      # sudo will install at host lib
+    </p>
+    <p>
+      sudo pip install request
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1594967121082" ID="ID_974313145" MODIFIED="1594967122431" TEXT="exit">
+<node CREATED="1594967081706" ID="ID_1055611478" MODIFIED="1594967119575" TEXT="deactivate"/>
+</node>
+<node CREATED="1594967128906" ID="ID_920780775" MODIFIED="1594967141855" TEXT="rmvirtualenv pythonenv">
+<node CREATED="1594967291978" ID="ID_208491818" MODIFIED="1594967301946">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      $ rmvirtualenv pythonenv
+    </p>
+    <p>
+      Removing pythonenv...
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1594974633088" ID="ID_1826494079" MODIFIED="1594974636381" TEXT="level">
+<node CREATED="1594974637264" ID="ID_1439893544" MODIFIED="1594974638989" TEXT="start">
+<node CREATED="1594955703699" ID="ID_1625142425" MODIFIED="1594955704600" TEXT="https://www.bilibili.com/video/BV1y7411P79R"/>
+<node CREATED="1589267856800" ID="ID_1722157651" MODIFIED="1589267866619" TEXT="pip install flask"/>
+<node CREATED="1595216896417" FOLDED="true" ID="ID_976586495" MODIFIED="1595237723474" TEXT="main">
+<node CREATED="1595216729353" ID="ID_1705209476" MODIFIED="1595216754972" TEXT="app">
+<node CREATED="1595216789818" ID="ID_1133390108" MODIFIED="1595216792270" TEXT="init">
+<node CREATED="1595216760042" ID="ID_456672725" MODIFIED="1595216772329">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      app = Flask(__name__,
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;static_url_path=&quot;/&quot;,
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;static_folder=&quot;static&quot;,&#160;&#160;# default is static
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;template_folder=&quot;templates&quot;&#160;&#160;# default is templates
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;)
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1595216796033" ID="ID_1393134357" MODIFIED="1595216798678" TEXT="config">
+<node CREATED="1595216783578" ID="ID_1591217699" MODIFIED="1595216786902" TEXT="app.config.from_object(Config)"/>
+</node>
+<node CREATED="1595216809017" ID="ID_1062295351" MODIFIED="1595216811165" TEXT="run">
+<node CREATED="1595216811962" ID="ID_1248053846" MODIFIED="1595216824702" TEXT="app.run()"/>
+</node>
+</node>
+<node CREATED="1595216658060" ID="ID_291866670" MODIFIED="1595216752790" TEXT="@app.route(&quot;/&quot;)"/>
+<node CREATED="1595216704922" ID="ID_727179768" MODIFIED="1595216708406" TEXT="converter"/>
+</node>
+<node CREATED="1595217832026" FOLDED="true" ID="ID_130419834" MODIFIED="1595237725491" TEXT="request">
+<node CREATED="1595219215090" ID="ID_1440578440" MODIFIED="1595219234175" TEXT="postman manual"/>
+<node CREATED="1595224272391" ID="ID_1035890575" MODIFIED="1595224315958" TEXT="query sting">
+<node CREATED="1595224281929" ID="ID_1095097823" MODIFIED="1595224305910" TEXT="?param01=value&amp;param02=value"/>
+<node CREATED="1595224409480" ID="ID_1338394235" MODIFIED="1595224870513" TEXT="request.args.get(&quot;args&quot;)"/>
+<node CREATED="1595224852087" ID="ID_1999635807" MODIFIED="1595224867762" TEXT="request.args.getlist(&quot;args&quot;)"/>
+</node>
+<node CREATED="1595224382087" ID="ID_1498688836" MODIFIED="1595224400396" TEXT="from body">
+<node CREATED="1595218309857" ID="ID_946036219" MODIFIED="1595225169847" TEXT="data">
+<node CREATED="1595223875127" ID="ID_203057744" MODIFIED="1595223881916" TEXT="application/json"/>
+<node CREATED="1595225169848" ID="ID_216850323" MODIFIED="1595225180028" TEXT="excluding form"/>
+</node>
+<node CREATED="1595218069955" ID="ID_1915710833" MODIFIED="1595218141051" TEXT="form">
+<node CREATED="1595219588690" ID="ID_1050055585" MODIFIED="1595219605111" TEXT="name1, name2 = request.form.get(&quot;name&quot;, &quot;default&quot;), request.form[&quot;name&quot;]"/>
+</node>
+</node>
+<node CREATED="1595226752327" ID="ID_1235119069" MODIFIED="1595227693185" TEXT="files">
+<node CREATED="1595227680767" ID="ID_384944271" MODIFIED="1595227711576" TEXT="file = request.files.get(&quot;file_name&quot;)"/>
+<node CREATED="1595227695799" ID="ID_1591534321" MODIFIED="1595227696823" TEXT="file.save(&quot;demo_flask.png&quot;)"/>
+</node>
+<node CREATED="1595227755554" ID="ID_1567341260" MODIFIED="1595227969872" TEXT="abort">
+<node CREATED="1595227969873" ID="ID_1846471913" MODIFIED="1595227978781" TEXT="about(404)"/>
+</node>
+<node CREATED="1595228516455" ID="ID_1902260742" MODIFIED="1595228517332" TEXT="@app.errorhandler(404)"/>
+</node>
+<node CREATED="1595228523967" ID="ID_778446250" MODIFIED="1595228527236" TEXT="response">
+<node CREATED="1595232124095" ID="ID_534508775" MODIFIED="1595232132424" TEXT="make_response"/>
+<node CREATED="1595232108991" ID="ID_1373218800" MODIFIED="1595232111940" TEXT="jsonify"/>
+</node>
+<node CREATED="1595234006823" ID="ID_1265940012" MODIFIED="1595234010607" TEXT="cookie">
+<node CREATED="1595234054239" ID="ID_271628094" MODIFIED="1595234071511" TEXT="add response headers"/>
+<node CREATED="1595234010607" ID="ID_1929846160" MODIFIED="1595234020288">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Set-Cookie: name=python; Path=/
+    </p>
+    <p>
+      Set-Cookie: name1=python1; Path=/
+    </p>
+    <p>
+      Set-Cookie: name2=python2; Expires=Mon, 20-Jul-2020 09:32:57 GMT; Max-Age=3600; Path=/
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1595234872975" ID="ID_1797541205" MODIFIED="1595238276486" TEXT="session">
+<node CREATED="1595234902079" ID="ID_929762295" MODIFIED="1595235456087">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      from flask import session
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      app = Flask(__name__)
+    </p>
+    <p>
+      app.secret_key = &quot;super secret key&quot;
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1595237443181" ID="ID_764387821" MODIFIED="1595237467058" TEXT="flask&#x9ed8;&#x8ba4;&#x628a;session&#x4fdd;&#x5b58;&#x5728;cookie&#x91cc;">
+<node CREATED="1595237535453" ID="ID_1520455346" MODIFIED="1595237572486" TEXT="&#x7528;secret_key&#x8fdb;&#x884c;&#x7b7e;&#x540d;&#x52a0;&#x5bc6;"/>
+<node CREATED="1595237687166" ID="ID_1399968972" MODIFIED="1595237699588">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <img src="python_pic/session.png" />
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1595238196029" ID="ID_374442283" MODIFIED="1595238214234" TEXT="session&#x7684;&#x6301;&#x4e45;&#x5316;&#x548c;&#x8d1f;&#x8f7d;&#x5e73;&#x8861;"/>
+</node>
+</node>
+</node>
 </node>
 </node>
 </node>

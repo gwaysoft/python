@@ -8,7 +8,7 @@ ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
 keyFile = "d:/tmp/id_rsa"
 key = paramiko.RSAKey.from_private_key_file(keyFile)
 #print(key)
-ssh_client.connect(hostname="192.168.2.100", username="root", pkey=key, timeout=5)
+ssh_client.connect(hostname="192.168.2.110", username="root", pkey=key, timeout=5)
 
 stdin, stdout, stderr = ssh_client.exec_command('cd /home; ls')
 print(stdout.read())

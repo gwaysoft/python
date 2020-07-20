@@ -1,54 +1,53 @@
+from gspackage import comparison, config
+from gspackage import gsLogger
+
+logger = gsLogger.getLogger(logDir="paloalto_address", fileName="address.log")
+
+TAG = " tag cloud-env"
+OPERATOR_SET = "set address "
+OPERATOR_DELETE = "delete address "
+URL_SYN = config.getValue(key="url")
+
+
 def getSynAddrList():
     import requests
-    import re
-    text = requests.get(
-        "http://172.25.16.9/downloads/op_tools/cloud_info/cloud_info").text
+    text = requests.get(URL_SYN).text
     # itemLength = 63
     list01 = text.split("\n")
+    returnList = []
+    for line in list01:
+        if line.find(",") != -1:
+            lineList = line.split(",")
+            for item in lineList:
+                if item == "null":
+                    continue
+                returnList.append(item)
+    returnList.append("122.122.122.3")
+    return returnList
+
+
+def wrapItemList(addList, delList, tag):
     returnList = []
     pattern = r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$"
-    tag = " tag cloud-env"
-    for line in list01:
-        if line.find(",") != -1:
-            lineList = line.split(",")
-            for item in lineList:
-                text = "set address "
-                if item == "null":
-                    continue
+    for item in addList:
+        import re
+        if re.match(pattern, item):
+            # continue
+            text = OPERATOR_SET + item[:63:] + tag + " ip-netmask " + item
+        else:
+            # if len(item) >= 63:
+            text = OPERATOR_SET + item[:63:] + tag + " fqdn " + item
+        returnList.append(text)
 
-                if re.match(pattern, item):
-                    # continue
-                    text = text + item[:63:] + tag + " ip-netmask " + item
-                else:
-                    # if len(item) >= 63:
-                    text = text + item[:63:] + tag + " fqdn " + item
-                returnList.append(text)
+    for item in delList:
+        text = OPERATOR_DELETE + item[:63:]
+        returnList.append(text)
     return returnList
 
 
-def delSynAddrList():
-    import requests
-    text = requests.get(
-        "http://172.25.16.9/downloads/op_tools/cloud_info/cloud_info").text
-    # itemLength = 63
-    list01 = text.split("\n")
-    returnList = []
-    tag = " tag insideIP"
-    for line in list01:
-        if line.find(",") != -1:
-            lineList = line.split(",")
-            for item in lineList:
-                text = 'delete address '
-                if item == "null":
-                    continue
-                text = text + item[:63:] + tag
-                returnList.append(text)
-    return returnList
-
-
-def addAddress(addrList):
-    # config_commands = list(addrList[0:2])
-    config_commands = list(addrList)
+def resetAddrList(config_commands):
+    if len(config_commands) == 0:
+        return
     config_commands.append("commit")
     print(config_commands)
 
@@ -65,20 +64,48 @@ def addAddress(addrList):
     output = net_connect.send_config_set(config_commands)
     print(output)
 
-    # output = net_connect.send_command('show clock')
 
-    # output = net_connect.send_command('set address pythontest001 ip-netmask 255.255.255.0')
-    # print(output)
+def job():
+    logger.debug("job start")
+    addrList = getSynAddrList();
+    # print(addrList)
+    addList = comparison.getAddItems(items=set(addrList))
 
-    # config_commands = ['set address test-003 tag insideIP ip-netmask 255.255.255.0',
-    #                    'set address test-004 tag insideIP ip-netmask 255.255.255.0',
-    #                    'set address test-006 tag insideIP ip-netmask 255.255.255.0',
-    #                    "commit"]
-    # config_commands = ['delete address test-002 tag insideIP']
+    delList = comparison.getDelItems(items=set(addrList))
+    operateList = wrapItemList(addList, delList, TAG);
+    if len(operateList) == 0:
+        return
+    resetAddrList(operateList)
+
+    # print(addList)
+    # print(delList)
+    comparison.resetItemList(items=set(addrList))
+
+    logger.info("add addresses: " + str(addList))
+    logger.info("del addresses: " + str(delList))
+
+
+def scheduleJob(job):
+    from apscheduler.schedulers.blocking import BlockingScheduler
+
+    # BlockingScheduler
+    scheduler = BlockingScheduler()
+    # scheduler.add_job(job, 'interval', seconds=30)
+    # scheduler.add_job(job, 'interval', hours=6)
+    scheduler.add_job(job, 'interval', minutes=2)
+    # scheduler.add_job(job, 'cron', second=15)
+    # nohup python3 -u main.py > test.log 2>&1 &
+    scheduler.start()
 
 
 def main():
-    addAddress(getSynAddrList())
+    logger.info("start")
+    job()
+    # scheduleJob(job)
+    # print(getSynAddrList())
+
+    # print(getSynAddrList())
+    # addAddress(getSynAddrList())
     # addAddress(delSynAddrList())
 
 

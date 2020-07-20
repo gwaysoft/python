@@ -1,4 +1,5 @@
 from netmiko.paloalto import PaloAltoPanosSSH
+import virtualenvwrapper.hook_loader
 
 connectConfig = {
     'device_type': 'paloalto_panos',
@@ -9,14 +10,12 @@ connectConfig = {
 
 net_connect = PaloAltoPanosSSH(**connectConfig)
 
-# output = net_connect.send_command('show clock')
+output = net_connect.send_command('show clock')
+print(output)
 
-# output = net_connect.send_command('set address pythontest001 ip-netmask 255.255.255.0')
-# print(output)
 
-config_commands = ['set address test-003 tag insideIP ip-netmask 255.255.255.0',
-                   'set address test-004 tag insideIP ip-netmask 255.255.255.0',
-                   'set address test-006 tag insideIP ip-netmask 255.255.255.0',
+
+config_commands = ['set address test-003 tag cloud-env ip-netmask 255.255.255.0',
                    "commit"]
 # config_commands = ['delete address test-002 tag insideIP']
 
