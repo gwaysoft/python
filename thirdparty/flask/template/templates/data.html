@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Hello {{name}}</p>
+    <p>Hello {{age}}</p>
+    <p>my_dict {{ my_dict.city}}</p>
+    <p>my_list {{ my_list}}</p>
+    <p>my_list {{ my_list[my_int]}}</p>
+    <p>{{my_list[0] + my_list[1]}}</p>
+    <p>{{"   d ddd eeddd   " | trim | upper}}</p>
+    <p>{{my_list | step2}}</p>
+    <p>{{my_list | step2_2}}</p>
+    <p>{{request.url}}</p>
+    <p>{{config.DEBUG}}</p>
+    <p>{{request.headers}}</p>
+    <p>{{request.cookies}}</p>
+    <p>{{request.data}}</p>
+    <p>{{url_for("data01")}}</p>
+    <hr/>
+</body>
+</html>

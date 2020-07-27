@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+</head>
+<body>
+<div id="app">
+    <h1>{{title}}</h1>
+    <table border="1">
+        <tr>
+            <td># No.</td>
+            <td>name</td>
+            <td>age</td>
+            <td>address</td>
+            <td>salary</td>
+        </tr>
+        <tr v-for="company in companies">
+            <td>[[company.ID]]</td>
+            <td>[[company.NAME]]</td>
+            <td>[[company.AGE]]</td>
+            <td>[[company.ADDRESS]]</td>
+            <td>[[company.SALARY]]</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            companies: []
+        },
+        delimiters: ["[[", "]]"],
+        mounted: function () {
+            this.fetchData();
+        },
+        methods: {
+            fetchData() {
+                this.$http.get("/api/company").then(rsp => {
+                    this.companies = rsp.body
+                }, err => {
+                    console.log("Error")
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

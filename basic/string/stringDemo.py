@@ -30,10 +30,10 @@ print(str[:3])
 # print(str.strip("s"))
 # print(str)
 
-# template = "NO. %09d\t name: %s\t url: https://www.%s.com"
+# templates = "NO. %09d\t name: %s\t url: https://www.%s.com"
 # template01 = "NO. {:0>9s}\t name: {:s}\t url: https://www.{:s}.com"
 # item = (7, "百度", "baidu")
-# print(template%item)
+# print(templates%item)
 # print(template01.format("7", "百度", "baidu"))
 
 # template01 = "NO. {0:0>9s}\t name: {1:s}\t url: https://www.{2:s}.com"

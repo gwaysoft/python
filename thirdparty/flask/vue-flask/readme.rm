@@ -1,0 +1,10 @@
+# create database, table and initialization
+$ sqlite3 test.db < test.sql
+    .databases
+    .tables
+    .schema company
+    .quit
+
+# flask run
+$ export FLASK_ENV=development
+$ flask run -h 0.0.0.0

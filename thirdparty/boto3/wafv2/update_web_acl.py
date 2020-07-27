@@ -1,6 +1,7 @@
 import boto3
 import json
 
+# ap-northeast-1 is Asia Pacific (Tokyo)
 wafv2_client = boto3.client('wafv2', 'ap-northeast-1')
 wafv2_response = wafv2_client.list_web_acls(Scope='REGIONAL')
 
@@ -56,7 +57,7 @@ if wafv2_response is not None:
         print(bj, type(bj))
         # rules.append(blacklist)
         # print(rules,type(rules))
-        break
+        # break
         re = wafv2_client.update_web_acl(
             Name=waf["Name"],
             Id=waf['Id'],

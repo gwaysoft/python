@@ -2969,7 +2969,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1589164568357" FOLDED="true" ID="ID_983813855" MODIFIED="1591686932275" TEXT="pyclamav">
+<node CREATED="1589164568357" FOLDED="true" ID="ID_983813855" MODIFIED="1595389120691" TEXT="pyclamav">
 <node CREATED="1589164604011" ID="ID_1226252757" MODIFIED="1589164617329" TEXT="&#x626b;&#x63cf;">
 <node CREATED="1589164581524" ID="ID_1728211825" MODIFIED="1589164589480" TEXT="&#x6728;&#x9a6c;"/>
 <node CREATED="1589164590893" ID="ID_431226478" MODIFIED="1589164595440" TEXT="&#x75c5;&#x6bd2;"/>
@@ -3386,7 +3386,27 @@ boto3           1.13.19                                                         
 </node>
 <node CREATED="1591689915731" ID="ID_792688278" MODIFIED="1591689944914" TEXT="https://github.com/kevinsteves/pan-python"/>
 </node>
-<node CREATED="1595231239082" ID="ID_373122937" MODIFIED="1595231243771" TEXT="ipython"/>
+<node CREATED="1595231239082" ID="ID_373122937" MODIFIED="1595231243771" TEXT="ipython">
+<node CREATED="1595383734109" ID="ID_368194361" MODIFIED="1595383764834">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      pip install ipython
+    </p>
+    <p>
+      ipython
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1595396252199" ID="ID_978250461" MODIFIED="1595396260868" TEXT="pymysql">
+<node CREATED="1595396273823" ID="ID_318613097" MODIFIED="1595396291492" TEXT="python3"/>
+</node>
 </node>
 <node CREATED="1587635001754" ID="ID_1691166028" MODIFIED="1587976530516" POSITION="left" TEXT="tools">
 <node CREATED="1587635004594" ID="ID_1719581009" MODIFIED="1587699915601" TEXT="IDLE (&#x81ea;&#x5e26;)">
@@ -3706,6 +3726,7 @@ boto3           1.13.19                                                         
 </node>
 </node>
 <node CREATED="1592964819297" ID="ID_949430100" MODIFIED="1592964821391" TEXT="socket"/>
+<node CREATED="1595489587539" ID="ID_188867178" MODIFIED="1595489594161" TEXT="unittest"/>
 </node>
 </node>
 <node CREATED="1595031542016" ID="ID_901640887" MODIFIED="1595231231627" POSITION="right" TEXT="web framework">
@@ -3751,7 +3772,7 @@ boto3           1.13.19                                                         
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1594966511042" FOLDED="true" ID="ID_1357214440" MODIFIED="1594974628190" TEXT="virtualenv">
+<node CREATED="1594966511042" ID="ID_1357214440" MODIFIED="1595574210770" TEXT="virtualenv">
 <node CREATED="1594960130299" ID="ID_1870109804" MODIFIED="1594960142151" TEXT="install virtualenv">
 <node CREATED="1594960068242" ID="ID_1948232717" MODIFIED="1594960125369">
 <richcontent TYPE="NODE"><html>
@@ -3963,8 +3984,7 @@ boto3           1.13.19                                                         
 <node CREATED="1594974637264" ID="ID_1439893544" MODIFIED="1594974638989" TEXT="start">
 <node CREATED="1594955703699" ID="ID_1625142425" MODIFIED="1594955704600" TEXT="https://www.bilibili.com/video/BV1y7411P79R"/>
 <node CREATED="1589267856800" ID="ID_1722157651" MODIFIED="1589267866619" TEXT="pip install flask"/>
-<node CREATED="1595216896417" FOLDED="true" ID="ID_976586495" MODIFIED="1595237723474" TEXT="main">
-<node CREATED="1595216729353" ID="ID_1705209476" MODIFIED="1595216754972" TEXT="app">
+<node CREATED="1595216729353" FOLDED="true" ID="ID_1705209476" MODIFIED="1595310601110" TEXT="app">
 <node CREATED="1595216789818" ID="ID_1133390108" MODIFIED="1595216792270" TEXT="init">
 <node CREATED="1595216760042" ID="ID_456672725" MODIFIED="1595216772329">
 <richcontent TYPE="NODE"><html>
@@ -3993,15 +4013,18 @@ boto3           1.13.19                                                         
 </node>
 <node CREATED="1595216796033" ID="ID_1393134357" MODIFIED="1595216798678" TEXT="config">
 <node CREATED="1595216783578" ID="ID_1591217699" MODIFIED="1595216786902" TEXT="app.config.from_object(Config)"/>
+<node CREATED="1595300782276" ID="ID_1756477224" MODIFIED="1595300784249" TEXT="get">
+<node CREATED="1595300787660" ID="ID_1607921376" MODIFIED="1595300797873" TEXT="app.config.get(&quot;key&quot;)"/>
+<node CREATED="1595300761461" ID="ID_1432674146" MODIFIED="1595300780480" TEXT="current.app.config.get(&quot;key&quot;)"/>
+</node>
 </node>
 <node CREATED="1595216809017" ID="ID_1062295351" MODIFIED="1595216811165" TEXT="run">
 <node CREATED="1595216811962" ID="ID_1248053846" MODIFIED="1595216824702" TEXT="app.run()"/>
 </node>
-</node>
 <node CREATED="1595216658060" ID="ID_291866670" MODIFIED="1595216752790" TEXT="@app.route(&quot;/&quot;)"/>
-<node CREATED="1595216704922" ID="ID_727179768" MODIFIED="1595216708406" TEXT="converter"/>
 </node>
-<node CREATED="1595217832026" FOLDED="true" ID="ID_130419834" MODIFIED="1595237725491" TEXT="request">
+<node CREATED="1595216704922" ID="ID_727179768" MODIFIED="1595298910077" TEXT="converter"/>
+<node CREATED="1595217832026" FOLDED="true" ID="ID_130419834" MODIFIED="1595310599479" TEXT="request">
 <node CREATED="1595219215090" ID="ID_1440578440" MODIFIED="1595219234175" TEXT="postman manual"/>
 <node CREATED="1595224272391" ID="ID_1035890575" MODIFIED="1595224315958" TEXT="query sting">
 <node CREATED="1595224281929" ID="ID_1095097823" MODIFIED="1595224305910" TEXT="?param01=value&amp;param02=value"/>
@@ -4026,11 +4049,11 @@ boto3           1.13.19                                                         
 </node>
 <node CREATED="1595228516455" ID="ID_1902260742" MODIFIED="1595228517332" TEXT="@app.errorhandler(404)"/>
 </node>
-<node CREATED="1595228523967" ID="ID_778446250" MODIFIED="1595228527236" TEXT="response">
+<node CREATED="1595228523967" FOLDED="true" ID="ID_778446250" MODIFIED="1595300287481" TEXT="response">
 <node CREATED="1595232124095" ID="ID_534508775" MODIFIED="1595232132424" TEXT="make_response"/>
 <node CREATED="1595232108991" ID="ID_1373218800" MODIFIED="1595232111940" TEXT="jsonify"/>
 </node>
-<node CREATED="1595234006823" ID="ID_1265940012" MODIFIED="1595234010607" TEXT="cookie">
+<node CREATED="1595234006823" FOLDED="true" ID="ID_1265940012" MODIFIED="1595297467577" TEXT="cookie">
 <node CREATED="1595234054239" ID="ID_271628094" MODIFIED="1595234071511" TEXT="add response headers"/>
 <node CREATED="1595234010607" ID="ID_1929846160" MODIFIED="1595234020288">
 <richcontent TYPE="NODE"><html>
@@ -4052,7 +4075,7 @@ boto3           1.13.19                                                         
 </richcontent>
 </node>
 </node>
-<node CREATED="1595234872975" ID="ID_1797541205" MODIFIED="1595238276486" TEXT="session">
+<node CREATED="1595234872975" FOLDED="true" ID="ID_1797541205" MODIFIED="1595297469705" TEXT="session">
 <node CREATED="1595234902079" ID="ID_929762295" MODIFIED="1595235456087">
 <richcontent TYPE="NODE"><html>
   <head>
@@ -4075,7 +4098,7 @@ boto3           1.13.19                                                         
 </html>
 </richcontent>
 </node>
-<node CREATED="1595237443181" ID="ID_764387821" MODIFIED="1595237467058" TEXT="flask&#x9ed8;&#x8ba4;&#x628a;session&#x4fdd;&#x5b58;&#x5728;cookie&#x91cc;">
+<node CREATED="1595237443181" ID="ID_764387821" MODIFIED="1595239198757" TEXT="flask&#x9ed8;&#x8ba4;&#x628a;session&#x4fdd;&#x5b58;&#x5728;cookie&#x91cc;">
 <node CREATED="1595237535453" ID="ID_1520455346" MODIFIED="1595237572486" TEXT="&#x7528;secret_key&#x8fdb;&#x884c;&#x7b7e;&#x540d;&#x52a0;&#x5bc6;"/>
 <node CREATED="1595237687166" ID="ID_1399968972" MODIFIED="1595237699588">
 <richcontent TYPE="NODE"><html>
@@ -4088,8 +4111,220 @@ boto3           1.13.19                                                         
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1595238196029" ID="ID_374442283" MODIFIED="1595238214234" TEXT="session&#x7684;&#x6301;&#x4e45;&#x5316;&#x548c;&#x8d1f;&#x8f7d;&#x5e73;&#x8861;"/>
+<node CREATED="1595238196029" ID="ID_374442283" MODIFIED="1595238214234" TEXT="session&#x7684;&#x6301;&#x4e45;&#x5316;&#x548c;&#x8d1f;&#x8f7d;&#x5e73;&#x8861;">
+<node CREATED="1595238777005" ID="ID_1013287050" MODIFIED="1595238784156">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <img src="python_pic/session_persistence.png" />
+  </body>
+</html>
+</richcontent>
 </node>
+</node>
+</node>
+<node CREATED="1595297460781" FOLDED="true" ID="ID_1487852301" MODIFIED="1595301324689" TEXT="context">
+<node CREATED="1595300703428" ID="ID_1234444500" MODIFIED="1595300947881" TEXT="request context (&#x8bf7;&#x6c42;&#x4e0a;&#x4e0b;&#x6587;)">
+<node CREATED="1595300710292" ID="ID_1350077989" MODIFIED="1595300889427">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <img src="python_pic/request_context.png" />
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1595300951436" ID="ID_1673762313" MODIFIED="1595300967429" TEXT="session context (&#x5e94;&#x7528;&#x4e0a;&#x4e0b;&#x6587;)"/>
+<node CREATED="1595300989844" ID="ID_1260272953" MODIFIED="1595300991529" TEXT="g">
+<node CREATED="1595301011484" ID="ID_581602596" MODIFIED="1595301027544" TEXT="g.username=&quot;sasa&quot;"/>
+<node CREATED="1595301104004" ID="ID_53344971" MODIFIED="1595301286537" TEXT="&#x53ea;&#x5bf9;&#x4e00;&#x6b21;&#x8bf7;&#x6c42;&#x6709;&#x6548;&#xff0c;&#x6bcf;&#x6b21;&#x8fdb;&#x5165;&#x8bf7;&#x90fd;&#x6e05;&#x7a7a;"/>
+</node>
+</node>
+<node CREATED="1595301373164" FOLDED="true" ID="ID_377789461" MODIFIED="1595310597119" TEXT="hook">
+<node CREATED="1595301404308" ID="ID_1809644456" MODIFIED="1595301463689" TEXT="&#x9884;&#x7559;&#x81ea;&#x5b9a;&#x4e49;&#x7684;&#x884c;&#x4e3a;&#xff0c;&#x53ef;&#x4ee5;&#x52a0;&#x5165;&#x4ee3;&#x7801;&#xff0c;&#x5f53;&#x7b26;&#x5408;&#x67d0;&#x79cd;&#x60c5;&#x51b5;&#x65f6;&#xff0c;&#x8fde;&#x5e26;&#x6267;&#x884c;"/>
+<node CREATED="1595301534884" ID="ID_1244106699" MODIFIED="1595301547485" TEXT="4 types">
+<node CREATED="1595301547486" ID="ID_1630261244" MODIFIED="1595301568137" TEXT="app.before_first_request"/>
+<node CREATED="1595301576052" ID="ID_1511087858" MODIFIED="1595301581089" TEXT="before_request"/>
+<node CREATED="1595301582324" ID="ID_372706821" MODIFIED="1595301586321" TEXT="after_request"/>
+<node CREATED="1595301638748" ID="ID_266945032" MODIFIED="1595301647601" TEXT="teardown_request">
+<node CREATED="1595301662996" ID="ID_1181994959" MODIFIED="1595301674777" TEXT="&#x5f02;&#x5e38;&#x4ecd;&#x7136;&#x6267;&#x884c;"/>
+<node CREATED="1595303341163" ID="ID_1588443561" MODIFIED="1595303342993" TEXT="# app.run(debug=True) teardown_request does not execute"/>
+</node>
+</node>
+</node>
+<node CREATED="1595310603185" FOLDED="true" ID="ID_604015988" MODIFIED="1595496272196" TEXT="manager">
+<node CREATED="1595312277618" ID="ID_189093125" MODIFIED="1595312300036" TEXT="pip install flask-script"/>
+<node CREATED="1595312051242" ID="ID_445909056" MODIFIED="1595312055894" TEXT="runserver">
+<node CREATED="1595311775170" ID="ID_1418900038" MODIFIED="1595311866941" TEXT="python script_demo.py runserver --host 0.0.0.0 -D"/>
+</node>
+<node CREATED="1595312192266" ID="ID_293691417" MODIFIED="1595312194031" TEXT="shell">
+<node CREATED="1595312234850" ID="ID_649757336" MODIFIED="1595312235702" TEXT="python script_demo.py shell"/>
+<node CREATED="1595312238250" ID="ID_677455880" MODIFIED="1595312249054" TEXT="&gt;&gt;&gt; app.url_map"/>
+</node>
+</node>
+<node CREATED="1595312318625" FOLDED="true" ID="ID_943537305" MODIFIED="1595496273126" TEXT="template">
+<node CREATED="1595314915752" ID="ID_516963486" MODIFIED="1595314919604" TEXT="jinja2">
+<node CREATED="1595384263575" ID="ID_28730025" MODIFIED="1595384265667" TEXT="micro">
+<node CREATED="1595384279950" ID="ID_1689041104" MODIFIED="1595384292419" TEXT="&#x4e00;&#x6b21;&#x5b9a;&#x4e49;&#x591a;&#x6b21;&#x4f7f;&#x7528;"/>
+</node>
+</node>
+<node CREATED="1595316232560" ID="ID_1637078126" MODIFIED="1595316235853" TEXT="filter">
+<node CREATED="1595314920904" ID="ID_1736977217" MODIFIED="1595314922548" TEXT="xss">
+<node CREATED="1595315912831" ID="ID_1103972561" MODIFIED="1595315935810" TEXT="&#x524d;&#x7aef;&#x4f20;&#x8fc7;&#x6765;&#x7684;&#x811a;&#x672c;"/>
+<node CREATED="1595315838632" ID="ID_725346420" MODIFIED="1595315854084" TEXT="safe">
+<node CREATED="1595315746472" ID="ID_490491402" MODIFIED="1595315747581" TEXT="&lt;script&gt;alert(&quot;hello attack&quot;);&lt;/script&gt;"/>
+<node CREATED="1595315848427" ID="ID_1787430570" MODIFIED="1595315849732" TEXT="{{text | safe}}"/>
+</node>
+</node>
+<node CREATED="1595316239600" ID="ID_1628083834" MODIFIED="1595316248492" TEXT="customized filter"/>
+</node>
+<node CREATED="1595318979567" ID="ID_1655451924" MODIFIED="1595384249742" TEXT="pip install flask-wtf"/>
+</node>
+<node CREATED="1595389299118" FOLDED="true" ID="ID_1229394782" MODIFIED="1595496270546" TEXT="flask-sqlalchemy">
+<node CREATED="1595396019351" ID="ID_1010352879" MODIFIED="1595396032220" TEXT="docker mysql">
+<node CREATED="1595397225615" ID="ID_636555201" MODIFIED="1595400976392" TEXT="show databases;"/>
+<node CREATED="1595397231727" ID="ID_1446972990" MODIFIED="1595400981031" TEXT="create database flask01 default charset=utf8;"/>
+<node CREATED="1595400955420" ID="ID_463569413" MODIFIED="1595400983449" TEXT="use flask01;"/>
+<node CREATED="1595400967508" ID="ID_653887385" MODIFIED="1595400973136" TEXT="show tables;"/>
+<node CREATED="1595401091693" ID="ID_1520737548" MODIFIED="1595401102825" TEXT="desc roles;"/>
+</node>
+<node CREATED="1595401040764" ID="ID_1366263881" MODIFIED="1595401043720" TEXT="SQLALCHEMY_DATABASE_URI = &quot;mysql+pymysql://root:123456@192.168.2.110:3306/flask01&quot;"/>
+<node CREATED="1595402230533" ID="ID_1899232117" MODIFIED="1595402237993" TEXT="ipython">
+<node CREATED="1595402243588" ID="ID_1827444634" MODIFIED="1595402299844">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      $ ipython
+    </p>
+    <p>
+      In [1]: from db_demo import *
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node CREATED="1595403153268" ID="ID_833174509" MODIFIED="1595403154985" TEXT="query">
+<node CREATED="1595403155916" ID="ID_1201338634" MODIFIED="1595403157600" TEXT="filter"/>
+<node CREATED="1595403159092" ID="ID_1164494675" MODIFIED="1595403162521" TEXT="offset">
+<node CREATED="1595403226780" ID="ID_1582336531" MODIFIED="1595403234794" TEXT="&#x8df3;&#x8fc7;2&#x6761;"/>
+</node>
+<node CREATED="1595403164252" ID="ID_911041386" MODIFIED="1595403167209" TEXT="limit"/>
+<node CREATED="1595403170708" ID="ID_1582911526" MODIFIED="1595403175786" TEXT="order_by"/>
+</node>
+</node>
+<node CREATED="1595490515551" ID="ID_710368081" MODIFIED="1595490520301" TEXT="unittest"/>
+</node>
+</node>
+<node CREATED="1595496239705" ID="ID_760138440" MODIFIED="1595496245304" TEXT="webserver">
+<node CREATED="1595496246194" ID="ID_1356452452" MODIFIED="1595496289143" TEXT="gunicorn + flask">
+<node CREATED="1595496835301" FOLDED="true" ID="ID_1112127277" MODIFIED="1595572590061" TEXT="overview">
+<node CREATED="1595496764006" ID="ID_1100349642" MODIFIED="1595496789787">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <img src="python_pic/gunicorn_overview.png" />
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1595496844047" ID="ID_1936991182" MODIFIED="1595496856652" TEXT="pip install gunicorn"/>
+<node CREATED="1595497515351" ID="ID_1562609049" MODIFIED="1595572335789">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      gunicorn -w 4 -b 0.0.0.0:5000 --access-logfile gunicorn.log -D macro_demo:app
+    </p>
+    <p>
+      gunicorn -w 4 -b 0.0.0.0:5001 --access-logfile gunicorn_f.log -D flask_demo:app
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1595572619139" ID="ID_1439470800" MODIFIED="1595572625319" TEXT="-D daemon"/>
+</node>
+<node CREATED="1595572289668" ID="ID_699410618" MODIFIED="1595572400410" TEXT="docker run nginx">
+<node CREATED="1595572415347" ID="ID_1003127858" MODIFIED="1595572473839" TEXT="revise nginx configured file at /etc/nginx/conf.d/default.conf">
+<node CREATED="1595572404926" ID="ID_1036074969" MODIFIED="1595572409567">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      upstream flask {
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;server 192.168.2.110:5000;
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;server 192.168.2.110:5001;
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      server {
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;listen&#160;&#160;&#160;&#160;&#160;&#160;&#160;80;
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;listen&#160;&#160;[::]:80;
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;server_name&#160;&#160;localhost;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;#charset koi8-r;
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;#access_log&#160;&#160;/var/log/nginx/host.access.log&#160;&#160;main;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;location / {
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;proxy_pass http://flask;
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;#error_page&#160;&#160;404&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;/404.html;
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1595583747782" ID="ID_1547351045" MODIFIED="1595583754299" TEXT="practice">
+<node CREATED="1595583754299" ID="ID_727520369" MODIFIED="1595583778889" TEXT="vue flask">
+<node CREATED="1595583765508" ID="ID_1300965411" MODIFIED="1595583766085" TEXT="https://www.bilibili.com/video/BV1Aa4y1i7zQ"/>
 </node>
 </node>
 </node>

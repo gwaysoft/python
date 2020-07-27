@@ -1,0 +1,11 @@
+{%macro input()%}
+    <input type="text" value="" size="30">
+{%endmacro%}
+
+{%macro input2(type, value, size)%}
+    <input type="{{type}}" value="{{value}}" size="{{size}}">
+{%endmacro%}
+
+{%macro input3(type="text", value="input3", size=40)%}
+    <input type="{{type}}" value="{{value}}" size="{{size}}">
+{%endmacro%}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {%macro input()%}
+        <input type="text" value="" size="30">
+    {%endmacro%}
+    <p>input1</p>
+    {{input()}}
+    <p>input1</p>
+    {{input()}}
+    <hr/>
+    {%macro input2(type, value, size)%}
+        <input type="{{type}}" value="{{value}}" size="{{size}}">
+    {%endmacro%}
+    <p>input2</p>
+    {{input2(type, value, size=40)}}
+
+    {%macro input3(type="text", value="input3", size=40)%}
+        <input type="{{type}}" value="{{value}}" size="{{size}}">
+    {%endmacro%}
+    <p>input3</p>
+    {{input3()}}
+    <p>input31</p>
+    {{input3(value="input31")}}
+
+    <hr/>
+    {%import "macro_input.html" as m_input%}
+    <p>import inputdddd</p>
+    {{m_input.input3()}}
+</body>
+</html>

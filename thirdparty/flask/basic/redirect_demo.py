@@ -4,7 +4,7 @@ from flask import Flask, redirect, url_for
 # __name__ is current module name
 # Flask(__name__) current module directory as work directory
 # |-static as static directory
-# |-templates as template directory
+# |-templates as templates directory
 app = Flask(__name__)
 
 

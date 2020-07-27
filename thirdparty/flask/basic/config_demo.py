@@ -4,7 +4,7 @@ from flask import Flask, current_app
 # __name__ is current module (file) name
 # Flask(__name__) current module (file) directory as work directory
 # |-static as default static directory
-# |-templates as default template directory
+# |-templates as default templates directory
 app = Flask(__name__,
             static_url_path="/",
             static_folder="static",  # default is static
