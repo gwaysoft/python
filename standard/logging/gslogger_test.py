@@ -1,5 +1,5 @@
 from gspackage import gsLogger
 
-
-logger = gsLogger.getLogger(logDir="niu")
+logger = gsLogger.getMyLogger(logDir="niu")
 logger.info("eee")
+

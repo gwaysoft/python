@@ -3,7 +3,7 @@ from gspackage import gsLogger
 
 logger = gsLogger.getLogger(logDir="paloalto_address", fileName="address.log")
 
-TAG = " tag cloud-env"
+TAG = " tag " + config.getValue(key="tag")
 OPERATOR_SET = "set address "
 OPERATOR_DELETE = "delete address "
 URL_SYN = config.getValue(key="url")
@@ -22,7 +22,7 @@ def getSynAddrList():
                 if item == "null":
                     continue
                 returnList.append(item)
-    returnList.append("122.122.122.3")
+    returnList.append("122.122.122.2")
     return returnList
 
 
@@ -81,8 +81,8 @@ def job():
     # print(delList)
     comparison.resetItemList(items=set(addrList))
 
-    logger.info("add addresses: " + str(addList))
-    logger.info("del addresses: " + str(delList))
+    logger.info("[ADD] total %s | add addresses: %s" % (len(addList), str(addList)))
+    logger.info("[DEL] total %s | del addresses: %s" % (len(delList), str(delList)))
 
 
 def scheduleJob(job):
@@ -94,7 +94,7 @@ def scheduleJob(job):
     # scheduler.add_job(job, 'interval', hours=6)
     scheduler.add_job(job, 'interval', minutes=2)
     # scheduler.add_job(job, 'cron', second=15)
-    # nohup python3 -u main.py > test.log 2>&1 &
+    # nohup python3 -u business01.py > test.log 2>&1 &
     scheduler.start()
 
 

@@ -3400,8 +3400,7 @@ boto3           1.13.19                                                         
       ipython
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1595396252199" ID="ID_978250461" MODIFIED="1595396260868" TEXT="pymysql">
@@ -4071,8 +4070,7 @@ boto3           1.13.19                                                         
       Set-Cookie: name2=python2; Expires=Mon, 20-Jul-2020 09:32:57 GMT; Max-Age=3600; Path=/
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1595234872975" FOLDED="true" ID="ID_1797541205" MODIFIED="1595297469705" TEXT="session">
@@ -4095,8 +4093,7 @@ boto3           1.13.19                                                         
       app.secret_key = &quot;super secret key&quot;
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1595237443181" ID="ID_764387821" MODIFIED="1595239198757" TEXT="flask&#x9ed8;&#x8ba4;&#x628a;session&#x4fdd;&#x5b58;&#x5728;cookie&#x91cc;">
 <node CREATED="1595237535453" ID="ID_1520455346" MODIFIED="1595237572486" TEXT="&#x7528;secret_key&#x8fdb;&#x884c;&#x7b7e;&#x540d;&#x52a0;&#x5bc6;"/>
@@ -4120,8 +4117,7 @@ boto3           1.13.19                                                         
   <body>
     <img src="python_pic/session_persistence.png" />
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
@@ -4135,8 +4131,7 @@ boto3           1.13.19                                                         
   <body>
     <img src="python_pic/request_context.png" />
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1595300951436" ID="ID_1673762313" MODIFIED="1595300967429" TEXT="session context (&#x5e94;&#x7528;&#x4e0a;&#x4e0b;&#x6587;)"/>
@@ -4208,8 +4203,7 @@ boto3           1.13.19                                                         
       In [1]: from db_demo import *
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1595403153268" ID="ID_833174509" MODIFIED="1595403154985" TEXT="query">
@@ -4226,7 +4220,7 @@ boto3           1.13.19                                                         
 </node>
 <node CREATED="1595496239705" ID="ID_760138440" MODIFIED="1595496245304" TEXT="webserver">
 <node CREATED="1595496246194" ID="ID_1356452452" MODIFIED="1595496289143" TEXT="gunicorn + flask">
-<node CREATED="1595496835301" FOLDED="true" ID="ID_1112127277" MODIFIED="1595572590061" TEXT="overview">
+<node CREATED="1595496835301" FOLDED="true" ID="ID_1112127277" MODIFIED="1596531226063" TEXT="overview">
 <node CREATED="1595496764006" ID="ID_1100349642" MODIFIED="1595496789787">
 <richcontent TYPE="NODE"><html>
   <head>
@@ -4239,7 +4233,7 @@ boto3           1.13.19                                                         
 </node>
 </node>
 <node CREATED="1595496844047" ID="ID_1936991182" MODIFIED="1595496856652" TEXT="pip install gunicorn"/>
-<node CREATED="1595497515351" ID="ID_1562609049" MODIFIED="1595572335789">
+<node CREATED="1595497515351" FOLDED="true" ID="ID_1562609049" MODIFIED="1596530722219">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -4252,8 +4246,7 @@ boto3           1.13.19                                                         
       gunicorn -w 4 -b 0.0.0.0:5001 --access-logfile gunicorn_f.log -D flask_demo:app
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1595572619139" ID="ID_1439470800" MODIFIED="1595572625319" TEXT="-D daemon"/>
 </node>
 <node CREATED="1595572289668" ID="ID_699410618" MODIFIED="1595572400410" TEXT="docker run nginx">

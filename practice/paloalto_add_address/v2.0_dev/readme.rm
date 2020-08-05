@@ -1,0 +1,15 @@
+[business]
+pip
+    pip3 install requests
+
+[maintenance][development]
+# flask run
+export FLASK_ENV=development
+flask run -h 0.0.0.0
+
+[maintenance][product]
+# start
+gunicorn -c gunicorn_config.py -D flask_main:app
+# shutdown
+pstree -p | grep gunicorn
+kill -9 pid

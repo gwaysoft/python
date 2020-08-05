@@ -8,8 +8,10 @@ wafv2_response = wafv2_client.list_web_acls(Scope='REGIONAL')
 
 if wafv2_response is not None:
     for waf in wafv2_response['WebACLs']:
-        print(waf["Name"])
 
+        if waf["Name"] != "waf-test":
+            continue
+        print(waf["Name"])
         wacl_response = wafv2_client.get_web_acl(
             Name=waf["Name"], Id=waf['Id'], Scope='REGIONAL')
         # print(wacl_response)
@@ -30,14 +32,15 @@ if wafv2_response is not None:
                          },
                         {'Name': 'SizeRestrictions_QUERYSTRING'
                          },
-                        {'Name': 'NoUserAgent_HEADER'
-                         },
+                        # {'Name': 'NoUserAgent_HEADER'
+                        #  },
                         {'Name': 'UserAgent_BadBots_HEADER'
                          },
                         {'Name': 'EC2MetaDataSSRF_BODY'
-                         },
-                        {'Name': 'EC2MetaDataSSRF_URIPATH'
                          }
+                        # ,
+                        # {'Name': 'EC2MetaDataSSRF_URIPATH'
+                        #  }
                     ]
                 }
             },

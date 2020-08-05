@@ -89,7 +89,7 @@ def scheduleJob(job):
     # scheduler.add_job(job, 'interval', seconds=30)
     scheduler.add_job(job, 'interval', minutes=10)
     # scheduler.add_job(job, 'cron', second=15)
-    # nohup python3 -u main.py > test.log 2>&1 &
+    # nohup python3 -u business01.py > test.log 2>&1 &
     scheduler.start()
 
 

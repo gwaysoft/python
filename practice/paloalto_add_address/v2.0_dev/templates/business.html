@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+</head>
+<body>
+<div id="app">
+    <h2>{{title}}</h2>
+    <table border="1">
+        <tr>
+            <td>Action</td>
+            <td>Address List</td>
+        </tr>
+        <tr v-for="company in companies">
+            <td style="vertical-align:top">[[company.action]]</td>
+            <td><p style="margin-top: 0px;margin-bottom: 0px;" v-for="item in company.list">[[item]]</p></td>
+        </tr>
+    </table>
+
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            companies: []
+        },
+        delimiters: ["[[", "]]"],
+        mounted: function () {
+            this.fetchData();
+        },
+        methods: {
+            fetchData() {
+                this.$http.get("/api/company").then(rsp => {
+                    this.companies = rsp.body
+                }, err => {
+                    console.log("Error")
+                });
+            }
+        }
+    });
+
+    function shut() {
+        window.location.href = "about:blank";
+        window.close();
+    }
+</script>
+<br>
+<input type="button" onclick="shut()" value="close current page">
+</body>
+</html>

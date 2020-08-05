@@ -1,6 +1,5 @@
 import logging
 
-
 def getMyLogger(consoleLevel=logging.DEBUG, fileLevel=logging.INFO, logDir="temp", fileName="log.log"):
     logger = logging.getLogger('simple_example')
     logger.setLevel(logging.DEBUG)
@@ -39,3 +38,4 @@ def getMyLogger(consoleLevel=logging.DEBUG, fileLevel=logging.INFO, logDir="temp
     logger.addHandler(ch)
     logger.addHandler(fh)
     return logger
+
