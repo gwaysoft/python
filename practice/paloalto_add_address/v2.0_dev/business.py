@@ -1,9 +1,11 @@
-from gspackage import config
-from gspackage import gsLogger, paloauto
-import logging
+#!/bin/python3
+from gspackage.utils import config
+from gspackage import paloauto
+from gspackage.logging.logger import logger
 
 
-logger = gsLogger.getMyLogger(logDir="paloalto_address", fileName="address.log")
+#
+# logger = gsLogger.getMyLogger(logDir=config.getValue(key="log_dir"), fileName="address.log")
 # logger = gsLogger.getMyLogger(logDir="paloalto_address", fileName="address.log", fileLevel=logging.DEBUG)
 
 TAG = " tag " + config.getValue(key="tag")
@@ -28,6 +30,7 @@ def getPAAddrListByTag(command):
 
 def getSynAddrList():
     import requests
+    print(URL_SYN)
     text = requests.get(URL_SYN).text
     # itemLength = 63
     list01 = text.split("\n")

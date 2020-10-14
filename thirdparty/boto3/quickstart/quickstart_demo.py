@@ -11,9 +11,9 @@ import boto3
 #     print(bucket.name)
 #     if isFrist:
 #         isFrist = False
-#         data = open("readme.rm", mode="rb")
+#         data = open("readme.md", mode="rb")
 #         # udpate a file
-#         bucket.put_object(Key="readme.rm", Body=data)
+#         bucket.put_object(Key="readme.md", Body=data)
 #         print("update for ", bucket.name)
 
 # s3 = boto3.resource('s3', config=Config(signature_version='s3v4'))

@@ -9,3 +9,4 @@ domains.ini
 log/log.log
     a log file
     time rotate daily
+email

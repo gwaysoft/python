@@ -14,7 +14,7 @@ accesslog = os.path.join(cwd, "log/gunicorn.log")
 # logfile = os.path.join(cwd, "debug.log")
 # logfile = 'debug.log'
 
-workers = 4
+workers = 2
 timeout = 100
 
 

@@ -1,8 +1,9 @@
 dict01 = {"aaa":22, "bbb":"33","bbb":"33"}
-print(dict01, type(dict01))
+print(dict01, type(dict01), str(len(dict01)))
 
 key = ["aaa", "bbb", "ccc"]
 value = ["33", 1212, ["eee",]]
+
 
 print({k:v for k, v in zip(key,value)})
 

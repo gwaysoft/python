@@ -19,5 +19,10 @@ def getAddressListByTag(command):
 
 
 # testList = getAddressListByTag('show object dynamic-address-group name awsprod')
-testList = getAddressListByTag('show object dynamic-address-group name cloud-env')
-print(len(testList), testList)
+# testList = getAddressListByTag('show object dynamic-address-group name cloud-env')
+# print(len(testList), testList)
+
+config_commands = ["set rulebase security rules \"LR-9928-1\" disabled yes"]
+# config_commands = ["set rulebase security rules “LR-9928-1” disabled yes"]
+# config_commands = ["set rulebase security rules “LR-9928-1” disabled no"]
+print(paloauto.executeConfigCommand(config_commands))

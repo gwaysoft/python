@@ -2,26 +2,43 @@ import myLogger
 
 logger = myLogger.getLogger()
 
+import os
 
-def getItemList(fileName):
-    import configparser
-    config = configparser.ConfigParser(allow_no_value=True)
-    config.read("/root/python/cisco_add_ip/"+fileName)
-    # config.read(fileName)
+CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
+COMPARISON_FILE = CURRENT_DIR + '/comparison.ini'
 
-    keys = config["default"].keys()
-    return list(keys), config
 
+def getDomainsList(fileName):
+    retList = []
+    import re
+    regular = re.compile('[^\s]*[.com|.cn]')
+    i = 1
+    with open(CURRENT_DIR + "/" + fileName, mode="r") as f:
+        retList = re.findall(regular, f.read())
+    return set(retList)
+
+
+# print(len(getDomainsList("domains.ini")), getDomainsList("domains.ini"))
 
 def getDomainIpList(domainList):
+    logger.debug(str(len(domainList)) + " " + str(domainList))
     import socket
-    retList = []
-    logger.debug("domainList: " + str(domainList))
+    retDict = {}
+    errList = []
     for domain in domainList:
         # logger.debug(type(domain))
-        ip = socket.gethostbyname(domain)
-        retList.append(ip)
-    return retList
+        try:
+            ip = socket.gethostbyname(domain)
+            retDict[ip] = domain
+        except:
+            errList.append(domain)
+    if len(errList) > 0:
+        logger.error(errList)
+        from gspackage.utils.smtp import sendEmails
+        logger.info(
+            sendEmails(receivers=["vickor.zhang@ebaotech.com", "david.wei@ebaotech.com"], subject="Error Domain(s)",
+                       content=str(errList)))
+    return retDict
 
 
 def addIpListToCisco(addIpList, cisco_ip):
@@ -54,12 +71,18 @@ def addIpListToCisco(addIpList, cisco_ip):
         logger.info(cisco_ip + " " + output)
 
 
-def getUpdateIpList(ipList):
-    existedList, config = getItemList("novalue.ini")
+def getUpdateIpList(retDict):
+    logger.debug(str(len(retDict)) + " " + str(retDict))
+    if len(retDict) == 0:
+        return []
+    import configparser
+    config = configparser.ConfigParser()
+    config.read(COMPARISON_FILE)
 
     # logger.debug("existedList: " + str(existedList))
+    existedList = config["DEFAULT"].keys()
 
-    addIpList = list(set(ipList).difference(set(existedList)))
+    addIpList = list(set(retDict.keys()).difference(set(existedList)))
 
     if len(addIpList) == 0:
         logger.debug("Not changes, thanks.")
@@ -69,16 +92,15 @@ def getUpdateIpList(ipList):
     addIpListToCisco(addIpList, "172.16.30.251")
 
     for ip in addIpList:
-        # print("ip: ", ip)
-        config.set("default", ip)
-
-    with open("/root/python/cisco_add_ip/" + 'novalue.ini', 'w') as fp:
+        print("ip: %s; demain: %s " % (ip, retDict[ip]))
+        config["DEFAULT"][ip] = retDict[ip]
+    with open(COMPARISON_FILE, 'w') as fp:
         config.write(fp)
     return addIpList
 
 
 def job():
-    getUpdateIpList(getDomainIpList(getItemList("domains.ini")[0]))
+    print(getUpdateIpList(getDomainIpList(getDomainsList("domains.ini"))))
 
 
 def scheduleJob(job):
@@ -94,9 +116,10 @@ def scheduleJob(job):
 
 
 def main():
+    # print(getDomainIpList(getDomainsList("domains.ini")))
     # scheduleJob(job)
     job()
-    # pass
+    pass
 
 
 if __name__ == "__main__":

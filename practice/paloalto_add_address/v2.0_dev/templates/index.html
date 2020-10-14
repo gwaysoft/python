@@ -2,27 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{title}}</title>
-    <script>
-        function shut() {
-            window.location.href = "about:blank";
-            window.close();
-        }
+    <title>Title</title>
+    <script language="javascript" type="text/javascript">
+        // window.location.href = "http://172.30.2.115:8080/oa/oauth2.action?client_id=pa&response_type=code&redirect_uri=192.168.2.110:5000/login";
+        window.location.href = "https://oa.ebaotech.com/oa/oauth2.action?client_id=pa&response_type=code&redirect_uri=192.168.2.110:5000/login";
     </script>
 </head>
 <body>
-<div id="app">
-    <h2>{{title}}</h2>
-    <p>readme: <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;1. press the followed button once, and waiting about 1~2 minutes <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;2. after 1~2 minutes, the page could not react, please not close the page and reopen
-    </p>
-    <form method="post" action="/business">
-        <input value="Synchronize AWS Production" type="submit">
-        <br>
-        <br>
-    </form>
-    <input type="button" onclick="shut()" value="close current page">
-</div>
+
 </body>
 </html>

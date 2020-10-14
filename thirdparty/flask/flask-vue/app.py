@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html", title="vue flask")
+    return render_template("pa.html", title="vue flask")
 
 
 @app.route("/api/company")
@@ -20,6 +20,13 @@ def company():
     return jsonify(rows)
 
 
+@app.after_request
+def cors(environ):
+    environ.headers['Access-Control-Allow-Origin'] = '*'
+    environ.headers['Access-Control-Allow-Method'] = '*'
+    environ.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
+    return environ
+
+
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
-    

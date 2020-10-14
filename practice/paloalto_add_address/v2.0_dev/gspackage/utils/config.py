@@ -12,6 +12,7 @@ def getConfig(fileName="config.ini"):
     return config
 
 
-def getValue(fileName="config.ini", section="DEFAULT", key="top"):
+def getValue(fileName="../config.ini", section="DEFAULT", key="top"):
     config = getConfig(fileName)
     return config[section][key]
+

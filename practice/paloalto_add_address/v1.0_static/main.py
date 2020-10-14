@@ -68,7 +68,7 @@ def resetAddrList(config_commands):
 def job():
     logger.debug("job start")
     addrList = getSynAddrList();
-    # print(addrList)
+    print(addrList)
     addList = comparison.getAddItems(items=set(addrList))
 
     delList = comparison.getDelItems(items=set(addrList))

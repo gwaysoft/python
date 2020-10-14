@@ -1,4 +1,5 @@
-from gspackage import comparison as cp, config
+from gspackage import comparison as cp
+from gspackage.utils import config
 
 print(cp.getAddItems(items={"3","2","33"}))
 print(cp.getDelItems(items={"3","2","33"}))
@@ -13,7 +14,7 @@ def job():
 
     print(config.getValue(section="log", key="log1"))
     print(config.getValue(section="log", key="log2"))
-
+job()
 def scheduleJob(job):
     from apscheduler.schedulers.blocking import BlockingScheduler
 

@@ -1,6 +1,8 @@
 import logging
 
-def getMyLogger(consoleLevel=logging.DEBUG, fileLevel=logging.INFO, logDir="temp", fileName="log.log"):
+
+def getMyLogger(consoleLevel=logging.DEBUG, fileLevel=logging.INFO, logPath="/var/log/python/", logDir="temp",
+                fileName="log.log"):
     logger = logging.getLogger('simple_example')
     logger.setLevel(logging.DEBUG)
     # create file handler which logs even debug messages
@@ -16,7 +18,7 @@ def getMyLogger(consoleLevel=logging.DEBUG, fileLevel=logging.INFO, logDir="temp
     # logFileName = logpath + "/log.log"
 
     import os
-    logpath = "/var/log/python/" + logDir  # 拼接log文件路径
+    logpath = logPath + logDir  # 拼接log文件路径
 
     if os.path.exists(logpath):  # 判断路径是否存在，不存在则创建
         pass
@@ -38,4 +40,3 @@ def getMyLogger(consoleLevel=logging.DEBUG, fileLevel=logging.INFO, logDir="temp
     logger.addHandler(ch)
     logger.addHandler(fh)
     return logger
-

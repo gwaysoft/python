@@ -14,6 +14,7 @@ def executeCommand(command):
 
 
 def executeConfigCommand(config_commands):
+    print(config_commands)
     if len(config_commands) == 0:
         return
     config_commands.append("commit")

@@ -1,5 +1,4 @@
 import time
-
 import redis
 from flask import Flask
 
@@ -21,7 +20,34 @@ def get_hit_count():
             time.sleep(0.5)
 
 
+def get_user():
+    import pymysql
+    conn = pymysql.connect(
+        host="db",
+        user='root',
+        password='123456',
+        database='mysql_db',
+        charset='utf8'
+    )
+
+    cursor_test = conn.cursor()
+
+    sql = '''select * from user'''
+    returnList = []
+    try:
+        cursor_test.execute(sql)
+        result = cursor_test.fetchall()
+        for row in result:
+            print("username %s, age %s" % (row[0], row[1]))
+            returnList = row
+        conn.commit()
+    except:
+        conn.rollback()
+
+    conn.close()
+    return returnList
+
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'Hello World 2! I have been seen {} times.\n'.format(count)
+    return str(get_user()) + ' Hello World 23! I have been seen {} times.\n'.format(count)
