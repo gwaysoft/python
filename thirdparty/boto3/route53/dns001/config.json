@@ -1,7 +1,7 @@
 {
-  "aws_key_id": "AKIA4PJQO7FPINU4NX6P",
-  "aws_key_secret": "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",
-  "aws_region": "us-west-2",
+  "aliyun_key_id": "AKIA4PJQO7FPINU4NX6P",
+  "aliyun_key_secret": "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",
+  "aliyun_region": "us-west-2",
   "domain": "insuremo.org.cn",
   "subdomain": "server",
   "ttl": 3600,
