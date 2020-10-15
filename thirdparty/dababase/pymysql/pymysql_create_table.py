@@ -1,7 +1,7 @@
 import pymysql
 
 conn = pymysql.connect(
-    host="192.168.2.110",
+    host="172.16.31.201",
     user='root',
     password='123456',
     database='mysql_db',
