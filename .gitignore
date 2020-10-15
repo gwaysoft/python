@@ -5,8 +5,8 @@ temp.*
 .idea/
 .vscode/
 **/config.json
+**/ss*
 __init__.py
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
