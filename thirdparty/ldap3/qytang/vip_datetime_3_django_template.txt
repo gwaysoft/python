@@ -1,0 +1,38 @@
+模板:
+{{ datetimetest }}
+
+views:
+'datetimetest': date.today()
+
+顯示:
+Feb. 16, 2019
+
+================================================
+模板:
+{{ datetimetest|date:'Y-m-d' }}
+
+views:
+'datetimetest': date.today()
+
+顯示:
+2019-02-16
+
+================================================
+模板:
+{{ datetimetest }}
+
+views:
+'datetimetest': datetime.now()
+
+顯示:
+Feb. 16, 2019, 8:09 p.m.
+
+================================================
+模板:
+{{ datetimetest|date:'Y-m-d H:i' }}
+
+views:
+'datetimetest': datetime.now()
+
+顯示:
+2019-02-16 20:11

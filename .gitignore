@@ -4,7 +4,10 @@ temp.*
 *.log.*
 .idea/
 .vscode/
+thirdparty/**
+thirdparty/boto3/route53/dns001/config.json
 __init__.py
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
