@@ -4,8 +4,7 @@ temp.*
 *.log.*
 .idea/
 .vscode/
-thirdparty/**
-thirdparty/boto3/route53/dns001/config.json
+**/config.json
 __init__.py
 
 
