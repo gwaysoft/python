@@ -3151,7 +3151,7 @@
 <node CREATED="1589268612278" ID="ID_422098264" MODIFIED="1589268615872" TEXT="gunicorn -b 0.0.0.0:8000 myapp:app"/>
 </node>
 </node>
-<node CREATED="1591686938498" FOLDED="true" ID="ID_1592632392" MODIFIED="1599636384440" TEXT="aws">
+<node CREATED="1591686938498" ID="ID_1592632392" MODIFIED="1602743196850" TEXT="aws">
 <node CREATED="1590570893851" ID="ID_65372571" MODIFIED="1591752673858" TEXT="boto3">
 <node CREATED="1592882505567" ID="ID_1726847839" MODIFIED="1592882508266" TEXT="reference">
 <node CREATED="1592884090171" ID="ID_1460139341" MODIFIED="1592884663801" TEXT="overview (best practice)">
@@ -3505,9 +3505,9 @@ boto3           1.13.19                                                         
 </node>
 </node>
 </node>
+</node>
 <node CREATED="1595033579120" ID="ID_553168804" MODIFIED="1595033587946" TEXT="pycharm license">
 <node CREATED="1595217465585" ID="ID_1218892322" MODIFIED="1595217479182" TEXT="http://idea.medeming.com/jets/"/>
-</node>
 </node>
 </node>
 </node>

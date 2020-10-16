@@ -15,4 +15,5 @@ cursor.execute(sql)
 # 用一个rs变量获取数据
 rs = cursor.fetchall()
 
+
 print(rs)
