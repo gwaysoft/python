@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1587626958014" ID="ID_1316099753" MODIFIED="1589007029408" TEXT="python">
+<node CREATED="1587626958014" ID="ID_1316099753" MODIFIED="1606801092783" TEXT="python">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -10,7 +10,8 @@
       <a href="https://www.python.org/">https://www.python.org/</a>
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node CREATED="1587626992106" ID="ID_1188324159" MODIFIED="1587627002101" POSITION="right" TEXT="training">
 <node CREATED="1587627002104" FOLDED="true" ID="ID_475897903" MODIFIED="1589007029418" TEXT="aliyun">
 <richcontent TYPE="NOTE"><html>

@@ -11,7 +11,7 @@ COMPARISON_FILE = CURRENT_DIR + '/comparison.ini'
 def getDomainsList(fileName):
     retList = []
     import re
-    regular = re.compile('[^\s]*[.com|.cn]')
+    regular = re.compile('[^\s]*.[a-z]')
     i = 1
     with open(CURRENT_DIR + "/" + fileName, mode="r") as f:
         retList = re.findall(regular, f.read())
@@ -26,7 +26,7 @@ def getDomainIpList(domainList):
     retDict = {}
     errList = []
     for domain in domainList:
-        # logger.debug(type(domain))
+        logger.debug(str(type(domain)) + ' ' + domain)
         try:
             ip = socket.gethostbyname(domain)
             retDict[ip] = domain
@@ -100,7 +100,8 @@ def getUpdateIpList(retDict):
 
 
 def job():
-    print(getUpdateIpList(getDomainIpList(getDomainsList("domains.ini"))))
+    # print(getUpdateIpList(getDomainIpList(getDomainsList("domains.ini"))))
+    print(getDomainIpList(getDomainsList("domains.ini")))
 
 
 def scheduleJob(job):
