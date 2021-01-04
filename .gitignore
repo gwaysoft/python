@@ -7,6 +7,7 @@ temp.*
 **/config.json
 **/ss*
 __init__.py
+backup
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
